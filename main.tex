@@ -1,0 +1,50 @@
+\documentclass{report}
+
+\usepackage{fontspec}
+\usepackage{xltxtra}
+\usepackage[lithuanian]{babel}
+\usepackage{indentfirst}
+\usepackage[]{hyperref}
+\usepackage[]{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{alltt}
+%\usepackage{listingsutf8}
+
+\hypersetup{pdfborder={0 0 0 0}}
+
+\defaultfontfeatures{Mapping=tex-text}
+
+
+% Apibrėžimai, teiginiai, pastabos.
+\swapnumbers
+
+\theoremstyle{plain}
+\newtheorem{prop}{Tg}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Ap.}
+\newtheorem{exmp}{Pvz}
+
+\theoremstyle{remark}
+\newtheorem*{note}{Pastaba}
+
+\newtheoremstyle{notation}{3pt}{3pt}{}{}{\itshape}{:}{.5em}{}
+\theoremstyle{notation}
+\newtheorem*{notation}{Žymėjimas}
+
+\title{%
+Almanto Juozulyno\\
+Matematinės analizės paskaitų konspektas}
+
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\bigskip
+\tableofcontents
+\input{paskaita_01.tex}
+
+\end{document}
