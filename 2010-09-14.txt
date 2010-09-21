@@ -1,0 +1,50 @@
+Funkcijos riba
+f : A → \mathbb{R}
+Ap. B(\epsilon; a) = U(\epsilon; a) = \{x \in \mathbb{R}: |x - a| < \epsilon \} – \epsilon-aplinka
+Ap. Taško a aplinka vadinsime aibę A, kuriai \epsilon > 0 \exists U(\epsilon; a) \subset A
+Ap. Aibė A vadinama atvira aibe, jei ji yra kiekvieno savo taško aplinka.
+Ap. Aibė A vadinama uždara, jei jos papildinys \mathbb{R} \setminus A yra atvira aibė.
+
+a = +\infty
+U(\epsilon, +\infty) = (\epsilon; +\infty)
+a = -\infty
+U(\epsilon, -\infty) = (-\infty; -\epsilon)
+
+Žym. Taško a \in \mathbb{R} \cup \{+\infty; -\infty\} aplinka žymima U_a, V_a
+
+A \subset \mathbb{R}
+1) Taškas a \in \mathbb{R} vadinamas aibės A ribiniu tašku, jei \forall \epsilon >0 \exists bent du aibės taškai, priklausantys U(\epsilon; a)
+2) Taškas a \in \mathbb{R} vadinamas vidiniu aibės A tašku, jei \exists \epsilon > 0, kad U(\epsilon; a) \subset A
+3) Taškas a \in \mathbb{R} vadinamas aibės A sienos tašku, jei \forall \epsilon > 0 U(\epsilon; a) turės ir aibės A taškų, ir taškų nepriklausančių aibei A.
+4) Taškas a \in \mathbb{R} vadinamas aibės A izoliuotu tašku, jei a \in A ir \exists \epsilon > 0 U(\epsilon; a), kurioje be a nėra kitų aibės A taškų.
+
+Pvz. A = \{\frac{1}{n} : n \in N\} \cup [10; 20)
+10 – ribinis taškas; nėra vidinis; sienos taškas; nėra izoliuotas
+20 – ribinis; nėra vidinis; sienos taškas; nėra izoliuotas
+15 – ribinis; vidinis; ne sienos; nėra izoliuotas
+\frac{1}{2} – nėra ribinis; ne vidinis; sienos; izoliuotas
+0 – ribinis; ne vidinis; sienos; ne izoliuotas
+
+Ap. Taškas b vadinamas funkcijos f riba taške a, jei \forall U_b \exists U_a: f(x) \in U_b, \forall x \in U_a \cap A, x != a
+Ap. Taškas b \in \mathbb{R} vadinamas funkcijos f riba taške a \in \mathbb{R}, jei \forall \epsilon > 0 \exists \delta > 0 : |f(x) - b| < \epsilon \forall x \in A \setminus \{a\} : |x - a| < \delta
+b - \epsilon < f(x) < b + \epsilon      a -\delta < x < a + \epsilon ?!
+Ap. Taškas b = +\infty vadinama funkcijos f riba taške a \in \mathbb{R}, jei \forall \epsilon > 0 \exists \delta > 0 : f(x) > \epsilon \forall x \in A: |x - a| < \delta
+N. d. užrašyti ribos apibrėžimą, kai b = -\infty, a = +\infty; kai b \in \mathbb{R}, a = -\infty
+Žym. \lim_{x \to \infty}{f(x)} = b
+Pvz. f(x) = x^2
+\lim_{x \to 2}{x^2} = 4? \forall \epsilon > 0 \exists \delta > 0 |x^2 - 4| < \epsilon, \forall x : |x - 2| < \delta
+\delta(\epsilon) = ?
+Fiksuojam \epsilon > 0
+Ieškome \delta > 0
+|x^2 - 4| < |x - 2| \cdot |x + 2| <= 5|x - 2| < \epsilon
+5|x - 2| < \epsilon
+|x - 2| < \frac{\epsilon}{5} = \delta
+1 <= x <= 3
+\delta < 1
+\delta = min(1, \frac{\epsilon}{5})
+
+Ap. (ribos apibrėžimas „sekų kalba“) Taškas b vadinamas funkcijos f riba taške a, jei \forall \{x_n\}, x_n \to a (x_n \in A, x_n != a)): f(x_n) \to b
+Teorema. „\epsilon-\delta“ kalba suformuluotas ribos apibrėžimas yra ekvivalentiškas „sekų“ kalba suformuluotam funkcijos ribos apibrėžimui.
+
+Pvz.: f(x) = sin\frac{1}{x}
+¬ Ap. Taškas b nėra f riba taške a, jei \exists \{x_n}, x_n \to a f(x_n) \not \to b

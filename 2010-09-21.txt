@@ -1,0 +1,51 @@
+T. Abu ribos apibrėžimai yra ekvivalentūs.
+Įrodymas.
+1) Ap_1 \Rightarrow Ap_2
+Sakykime \lim_{x \to a}{f(x)} = b pagal Ap_1.
+Imame x_n \to a (x_n \in A, x_n != a) \Rightarrow (pagal skaičių sekos ribos apibrėžimą) \forall U_a \exists N : x_n \in U_a, \forall n > N
+Laisvai paimame U_b tašką. Pagal Ap_1 \Rightarrow \forall U_b \exists U_a f(x) \in U_b \forall x \in U_a. Gavome f(x_n) \in U_b, \forall x_n \in U_a. Gauname f(x_n) \in U_b \forall n > N \Rightarrow f(x_n) \to b
+2) Ap_2 \Rightarrow Ap_1
+Sakykime \lim_{x \to a}{f(x)} = b pagal Ap_2.
+Tarkime, taškas b nėra riba taške a pagal Ap_1.
+\exists U_b \forall U_a : f(x^0) \not \in U_b \exists x^0 \in U_b
+Imkime U_a^{(n)} = (a - \frac{1}{n}, a + \frac{1}{n}), a \in \mathbb{R}
+U_{+\infty}^{(n)} = (n; +\infty)
+U_{-\infty}^{(n)} = (-\infty; n)
+Vietoj U_a statome U_a^{n}. Turime U_b (jis egzistuoja)
+U_a^{(1)} \exists x_1 \in U_a^{(1)} f(x_1) \not \in U_b
+U_a^{(2)} \exists x_2 \in U_a^{(2)} f(x_2) \not \in U_b
+...
+Sukonstravome \{X_n\}, X_n \to a, nes |a + \frac{1}{n} - (a - \frac{1}{n})| (U_a^{(n)} ilgis) = \frac{2}{n} \to 0
+Bet f(x_n) \not \to b
+Gavome prieštarą.
+Įrodymo pabaiga.
+
+T. Jei \lim_{x \to a}{f(x)} = b ir \lim_{x \to a}{f(x)} = c, tai b = c
+Įrodymas.
+Tarkime priešingai, b != c. Tegu b < c.
+\lim_{x \to a}{f(x)} = b \Rightarrow \forall U_b \exists U_a : f(x) \in U_b \forall x \in U_a
+\lim_{x \to a}{f(x)} = c \Rightarrow \forall U_c \exists U_a^' : f(x) \in U_c \forall x \in U_a^'
+U_a \cap U_a^' bus taško a aplinka
+Fiksuojame U_b ir U_c, kuriuose U_b \cap U_c = \varnothing; \forall x \in U_a \cap U_a^' \Rightarrow f(x) \in U_b; f(x) \in U_c
+Bet taip negali būti. Gavome prieštarą.
+
+T. Jei f(x) <= g(x), \forall x \in A (\forall x \in U_a) ir f bei g turi ribą taške a, tai \lim_{x \to a}{f(x)} <= \lim_{x \to a}{g(x)}
+
+T. Jei \lim_{x \to a}{f(x)} < c, tai \exists U_a : f(x) < c; \forall x \in U_a
+
+T. Jei h(x) <= f(x) <= g(x), \forall x \in A ir \lim_{x \to a}{f(x)} = \lim_{x \to a}{g(x)} = b, tai \lim_{x \to a}{f(x)} = b
+
+T. Jei funkcija f yra monotoniška intervale I ir a \in I, tai \exists \lim_{x \to a}{f(x)}.
+Jei papildomai žinome, kad f yra aprėžta intervale I, tai \lim_{x \to a}{f(x)} yra baigtinė.
+
+T. Jei f ir g turi baigtines ribas taške a ir \alpha, \beta \in \mathbb{R}, tai
+1) \lim_{x \to a}{(\alpha f(x) + \beta g(x))} = \alpha \lim_{x \to a}{f(x)} + \beta \lim_{x \to a}{g(x)}
+2) \lim_{x \to a}{(f(x) \cdot g(x))} = \lim_{x \to a}{f(x)} \codt \lim_{x \to a}{g(x)}
+3) Jei papildomai g(x) != 0 ir \lim_{x \to a}{g(x)} != 0 \forall x \in A, tai \lim_{x \to a}{\frac{f(x)}{g(x)}} = \frac{\lim_{x \to a}{f(x)}}{\lim_{x \to a}{g(x)}}
+
+Pvz. \lim_{x \to 0}{\frac{sin x}{x}} = 1
+
+Ap. Taškas b vadinamas funkcijos f riba taške a iš dešinės, jei \forall U_b \exists U_a : f(x) \in U_b \forall x \in U_a \cap (a; +\infty)
+Žym. \lim_{x \to a^+}{f(x)} = b
+Ap. Taškas b vadinamas funkcijos f riba taške a iš kairės, jei \forall U_b \exists U_a : f(x) \in U_b \forall x \in U_a \cap (-\infty; a)
+Žym. \lim_{x \to a^-}{f(x)} = b

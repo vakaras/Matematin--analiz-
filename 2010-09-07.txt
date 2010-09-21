@@ -1,0 +1,8 @@
+Vertinimas.
+Iš kontrolinio 20 taškų, egzamino – 30, papildoma užduotis – 4 taškai. Egzamine klausimai iš viso kurso.
+
+Temos:
+1. Funkcijos riba ir tolydumas
+2. Funkcijos išvestinė (Teiloro formulė, funkcijos tyrimas, išvestinės apibrėžimas)
+3. Apibrėžtinis integralas (Rymano, Lebego, nelabai konkretaus pavadinimo integralai)
+4. netiesioginis integralas (integravimo kintamojo pakeitimo formulė, integravimo dalimis formulė, Niutono-Leibnico formulė)
