@@ -1,0 +1,75 @@
+\chapter{Funkcijos riba}
+
+\begin{notation}
+  Funkcija iš realiųjų skaičių aibės $A$ į visų realiųjų skaičių aibę 
+  $\RSET$ žymima:
+  \[
+  \begin{array}[]{c l}
+    f : A \to \RSET, & \text{kur $A$ – funkcijos $f$ apibrėžimo sritis.}
+  \end{array}
+  \]
+\end{notation}
+
+\begin{defn}[$\varepsilon$-aplinka]
+  \[
+  B(\varepsilon; a) = U(\varepsilon; a) =%
+  \{ x \in \RSET : |x - a| < \varepsilon \}
+  \]
+\end{defn}
+
+\begin{defn}[Taško aplinka]
+  Taško $a$ aplinka vadinsime aibę $A$, kuriai:
+  \[
+  \varepsilon > 0 : \exists U(\varepsilon; a) \subset A
+  \]
+\end{defn}
+
+\begin{defn}[Atvira aibė]
+  Aibė $A$ vadinama atvira aibe, jei ji yra kiekvieno savo taško aplinka.
+\end{defn}
+
+\begin{defn}[Uždara aibė]
+  Aibė $A$ vadinama uždara aibe, jei $\RSET \setminus A$ yra atvira aibė.
+\end{defn}
+
+\begin{note}
+  Jei taškas $a \in \{-\infty; +\infty\}$, tai jo aplinka:
+  \begin{align*}
+    U(\varepsilon; +\infty) &= (\varepsilon; +\infty) \\
+    U(\varepsilon; -\infty) &= (-\infty; -\varepsilon)
+  \end{align*}
+\end{note}
+
+\begin{notation}
+  Taško $a (a \in \RSET \cup \{-\infty;+\infty\})$ aplinka žymima:
+  $U_{a}$ arba $V_{a}$.
+\end{notation}
+
+Šiuose apibrėžimuose laikome, jog $A \subset \RSET$:
+\begin{enumerate}
+  \item 
+    \begin{defn}[Aibės ribinis taškas]
+      Taškas $a (a \in \RSET)$ vadinamas aibės $A$ ribiniu tašku, jei 
+      $\forall \varepsilon (\varepsilon > 0)$ egzistuoja bent du aibės
+      taškai priklausantys $U(\varepsilon; a)$.
+    \end{defn}
+  \item
+    \begin{defn}[Aibės vidinis taškas]
+      Taškas $a (a \in \RSET)$ vadinamas vidiniu aibės $A$ tašku, jei 
+      $\exists \varepsilon (\varepsilon > 0)$, kad 
+      $U(\varepsilon; a) \subset A$.
+    \end{defn}
+  \item 
+    \begin{defn}[Aibės sienos taškas]
+      Taškas $a (a \in \RSET)$ vadinamas aibės $A$ sienos tašku, jei 
+      $\forall \varepsilon (\varepsilon > 0)$ 
+      $U(\varepsilon; a)$ turės tašką iš aibės $A$ ir tašką 
+      nepriklausantį $A$.
+    \end{defn}
+  \item 
+    \begin{defn}[Aibės izoliuotas taškas]
+      Taškas $a (a \in \RSET)$ vadinamas aibės $A$ izoliuotu tašku, jei
+      $a \in A$ ir $\exists \varepsilon (\varepsilon > 0)$, 
+      $U(\varepsilon; a)$, kurioje be $a$ nėra kitų aibės taškų.
+    \end{defn}
+\end{enumerate}
