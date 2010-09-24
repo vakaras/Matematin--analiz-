@@ -73,3 +73,89 @@
       $U(\varepsilon; a)$, kurioje be $a$ nėra kitų aibės taškų.
     \end{defn}
 \end{enumerate}
+
+\begin{exmp}
+  Panagrinėkime aibę $A = \left\{ \frac{1}{n} : n \in \NSET \right\}% 
+  \cup \left[ 10; 20 \right)$:
+
+  \begin{center}
+    \begin{tabular}[]{c c c c c}
+      Taškas & Ar ribinis & Ar vidinis & Ar sienos & Ar izoliuotas \\
+      10 & Taip & Ne & Taip & Ne \\
+      20 & Taip & Ne & Taip & Ne \\
+      15 & Taip & Taip & Ne & Ne \\
+      $\frac{1}{2}$ & Ne & Ne & Taip & Taip \\
+      0 & Taip & Ne & Taip & Ne 
+    \end{tabular}
+  \end{center}
+\end{exmp}
+
+Toliau laikome, jog turime funkciją $f : A \to B$ ir kad taškas $a$ 
+yra aibės $A$ ribinis taškas.
+
+\begin{defn}[Funkcijos riba]
+  \label{limfed}
+  Taškas $b$ vadinamas funkcijos $f$ riba taške $a$, jei:
+  \[
+  \forall U_b, \exists U_a : f(x) \in U_b,%
+  \forall x (x \in U_a \cap A \setminus \{a\})
+  \]
+\end{defn}
+
+\begin{defn}[Funkcijos riba]
+  Taškas $b (b \in \RSET)$ vadinamas funkcijos $f$ riba taške 
+  $a (a \in \RSET)$, jei:
+  \[
+  \forall \varepsilon (\varepsilon > 0), \exists \delta (\delta > 0):%
+  |f(x) - b| < \varepsilon,%
+  \forall x (x \in A \setminus \{a\} : |x - a| < \delta)
+  \]
+\end{defn}
+
+\begin{defn}[Funkcijos riba]
+  Taškas $b = +\infty$ vadinamas funkcijos $f$ riba taške $a (a \in \RSET)$,
+  jei:
+  \[
+  \forall \varepsilon (\varepsilon > 0), \exists \delta (\delta > 0) :%
+  f(x) > \varepsilon,%
+  \forall x (x \in A \setminus \{a\} : |x - a| < \delta)
+  \]
+\end{defn}
+
+TODO: Užrašyti ribos apibrėžimą, kai $b=-\infty \land a=+\infty$, 
+$b \in \RSET \land a=-\infty$.
+
+\begin{notation}
+  Funkcijos $f(x)$ riba taške $a$, kuri lygi $b$ žymima:
+  \[
+  \lim _{x \to a} f(x) = b
+  \]
+\end{notation}
+
+TODO: Užrašyti duotąjį pavyzdį.
+
+\begin{defn}[Funkcijos riba]
+  \label{limfs}
+  Taškas $b$ vadinamas $f$ riba taške $a$, jei:
+  \[
+  \forall \left\{ x_{n} \right\}, x_{n} \to a :%
+  f(x_{n}) \to b, \text{ kur } x_{n} \in A \text{ ir } x_{n} \neq a \:%
+  \forall n (n \in \NSET)%
+  \]
+\end{defn}
+
+TODO: Užrašyti per praktiką analizuotus pavyzdžius.
+
+TODO: Sutvarkyti teiginio ir jo įrodymo pavyzdį.
+\begin{prop}
+  \ref{limfed} ir \ref{limfs} funkcijos ribos apibrėžimai yra ekvivalentūs.
+  \begin{proof}
+    \hfill \\
+    \begin{description}
+      \item[(\ref{limfed} $\implies$ \ref{limfs})] 
+        Sakykime $\lim _{x \to a} f(x) = b$ pagal \ref{limfed} apibrėžimą.
+      \item[(\ref{limfs} $\implies$ \ref{limfed})]
+        Sakykime $\lim _{x \to a} f(x) = b$ pagal \ref{limfs} apibrėžimą.
+    \end{description}
+  \end{proof}
+\end{prop}
