@@ -154,8 +154,92 @@ TODO: Sutvarkyti teiginio ir jo įrodymo pavyzdį.
     \begin{description}
       \item[(\ref{limfed} $\implies$ \ref{limfs})] 
         Sakykime $\lim _{x \to a} f(x) = b$ pagal \ref{limfed} apibrėžimą.
+
+        Panagrinėkime seką $\{x_{n}\}$, kuri artėja į $a$:
+        \begin{equation}
+          x_{n} \to a, x_{n} \in A, x_{n} \neq a.
+          \label{limfp01}
+        \end{equation}
+        Pagal skaičių sekos ribos apibrėžimą:
+        \begin{equation}
+          \forall U_{a}, \exists N (N \in \NSET) :%
+            x_{n} \in U_{a}, \forall n (n > N).
+          \label{limfp02}
+        \end{equation}
+
+        Dabar laisvai pasirinkime $U_{b}$. Pagal \ref{limfed} apibrėžimą 
+        ir mūsų prielaidą (jog $\lim _{x \to a} f(x) = b$):
+        \begin{equation}
+          \forall U_{b}, \exists U_{a} :%
+            f(x) \in U_{b}, \forall x (x \in U_{a}).
+          \label{limfp03}
+        \end{equation}
+
+        Kadangi \ref{limfp03} teisinga visiems $x$, kurie priklauso $U_{a}$,
+        tai ji teisinga ir visiems $x_{n}$, kurie priklauso $U_{a}$. 
+        Todėl iš \ref{limfp03} gauname:
+        \begin{equation}
+          f(x_{n}) \in U_{b}, \forall x_{n} (x_{n} \in U_{a}).
+          \label{limfp04}
+        \end{equation}
+
+        Kadangi pagal \ref{limfp03} visoms $U_{b}$ egzistuoja bent viena
+        $U_{a}$ ir ji būtinai tenkina \ref{limfp02}, tai iš \ref{limfp04}
+        ir \ref{limfp02} gauname:
+        \begin{equation}
+          f(x_{n}) \in U_{b}, \forall n (n > N),
+          \label{limfp05}
+        \end{equation}
+        o tai ir reiškia, jog $f(x_{n}) \to b$.
+
       \item[(\ref{limfs} $\implies$ \ref{limfed})]
         Sakykime $\lim _{x \to a} f(x) = b$ pagal \ref{limfs} apibrėžimą.
+
+        Tarkime, jog taškas $b$ nėra riba taške a pagal \ref{limfed}
+        apibrėžimą. Tada:
+        \begin{equation}
+          \exists U_{b}, \forall U_{a} :%
+            f(x') \not\in U_{b}, \exists x' (x' \in U_{a}),
+          \label{limfp11}
+        \end{equation}
+        kur $x'$ – kažkoks pasirinktas skaičius.
+
+        Imkime:
+        \begin{align*}
+          U ^{(n)} _{a} &= \left( a - \frac{1}{n}; a + \frac{1}{n} \right),%
+            &a \in \RSET \\
+          U ^{(n)} _{+\infty} &= (n; +\infty) \\
+          U ^{(n)} _{-\infty} &= (-\infty; -n)
+        \end{align*}
+        Vietoj $U_{a}$ visur statome $U ^{(n)} _{a}$:
+        \begin{align*}
+          \exists x_{1} (x_{1} \in U _{a} ^{(1)}) &:%
+            f(x_{1}) \not\in U_{b}%
+            \text{ (pagal \ref{limfp11})} \\
+          \exists x_{2} (x_{2} \in U _{a} ^{(2)}) &:%
+            f(x_{2}) \not\in U_{b}%
+            \text{ (pagal \ref{limfp11})} \\
+          \exists x_{3} (x_{3} \in U _{a} ^{(3)}) &:%
+            f(x_{3}) \not\in U_{b}%
+            \text{ (pagal \ref{limfp11})} \\
+          \cdots
+        \end{align*}
+
+        Sukonstravome $\left\{ x_{n} \right\}$, kuri pagal susitraukiančiųjų
+        intervalų teoremą $x_{n} \to a$, nes
+        \[
+        \overbrace{\left(a+\frac{1}{n} - \left(a-\frac{1}{n}\right)\right)%
+          }^{U ^{(n)} _{a} ilgis} = \frac{2}{n} \to 0
+        \]
+        ir
+        \[
+        a - \frac{1}{n} \leq x_{n} \leq a + \frac{1}{n}.
+        \]
+        Pagal skaičių sekos ribos apibrėžimą gauname, jog 
+        $f(x_{n}) \not\to b$, nes $\exists U_{b}, \forall N:%
+        f(x_{n}) \not\in U_{b}, \exists n (n > N)$. Bet tai prieštarauja
+        mūsų prielaidai, jog $\lim _{x \to a} f(x) = b$ pagal \ref{limfs}
+        apibrėžimą.
     \end{description}
   \end{proof}
 \end{prop}
