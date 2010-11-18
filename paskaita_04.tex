@@ -97,3 +97,124 @@
     \end{description}
   \end{proof}
 \end{prop}
+
+\begin{exmp}
+  Įrodysime, kad:
+  \begin{equation*}
+    \lim _{x \to 0} \frac{\sin x}{x} = 1
+  \end{equation*}
+
+  \begin{proof}
+
+    Nubrėžkime vienetinį apskritimą ($|OD| = |OB| = 1$). Iš 
+    brėžinio (\ref{fig:sinx_x}) matome, jog:
+    \begin{equation}
+      S _{\Delta OBD} \leq S _{\text{išp.}OBD} \leq S _{\Delta OBC}
+      \label{_sinx_x_01}
+    \end{equation}
+
+    \begin{figure}[h!]
+      \begin{center}
+        \includegraphics[]{images/sinx_x.png}
+      \end{center}
+      \caption{Brėžinys.}
+      \label{fig:sinx_x}
+    \end{figure}
+
+    Apskaičiuokime trikampio $ODB$ plotą:
+    \begin{align*}
+      S _{\Delta OBD} &= \frac{ |AD| |OB| }{2} \\
+      &= \frac{ |AD| }{2}, &\left\{ \text{ nes } |OB| = 1 \right\} \\
+      &= \frac{ |OD| \sin x }{2}, 
+      &\left\{ \text{ nes } \frac{ |AD| }{ |OD| } = \sin x \right\} \\
+      &= \frac{ \sin x }{2}, &\left\{ \text{ nes } |OD| = 1 \right\}.
+    \end{align*}
+
+    Skritulio plotas lygus:
+    \begin{equation*}
+      S = \pi |OD|^2
+    \end{equation*}
+
+    Išpjovos $S_{\text{išp.}OBD}$ plotas sudaro $\frac{x}{2 \pi}$ viso 
+    skritulio ploto:
+    \begin{align*}
+      S_{\text{išp.}OBD} &= S \frac{x}{2 \pi} \\
+      &= \frac{\pi |OD|^2 x}{2 \pi} \\
+      &= \frac{x}{2}
+    \end{align*}
+
+    Apskaičiuokime trikampio $OBC$ plotą:
+    \begin{align*}
+      S_{\Delta OBC} &= \frac{ |OB| |BC| }{2} \\
+      &= \frac{ |OB| (|OB| \tg x)}{2}, 
+        &\left\{ \text{ nes } \frac{|BC|}{|OB} = \tg x \right\} \\
+      &= \frac{\tg x}{2} &\left\{ \text{ nes } |OB| = 1 \right\}
+    \end{align*}
+
+    Įsistatę išraiškas į \ref{_sinx_x_01} gauname:
+    \begin{equation*}
+      \frac{\sin x}{2} \leq \frac{x}{2} \leq \frac{\tg x}{2}
+    \end{equation*}
+
+    Pertvarkę gauname:
+    \begin{align}
+      \sin x \leq x & \text{ ir } \label{_sinx_x_02} \\
+      x \leq \tg x. \label{_sinx_x_03}
+    \end{align}
+
+    Iš \ref{_sinx_x_02} gauname:
+    \begin{equation}
+      \frac{\sin x}{x} \leq 1 
+      \label{_sinx_x_04}
+    \end{equation}
+
+    O iš \ref{_sinx_x_03}:
+    \begin{align}
+      x & \leq \tg x = \frac{\sin x}{\cos x} \\
+      \cos x &\leq \frac{\sin x}{x}.
+      \label{_sinx_x_05}
+    \end{align}
+
+    Iš \ref{_sinx_x_04} ir \ref{_sinx_x_05}:
+    \begin{align}
+      \cos x &\leq \frac{\sin x}{x} \leq 1 \\
+      \cos x - 1 &\leq \frac{\sin x}{x} - 1 \leq 0 \\
+      0 &\leq 1 - \frac{\sin x}{x} \leq 1 - \cos x
+    \end{align}
+
+    Pasinaudodami \ref{f_tri_kvsum} ir \ref{f_tri_dkcos} trigonometrinėmis
+    tapatybėmis $1 - \cos x$ galime pertvarkyti:
+    \begin{align}
+      1 - \cos x &= \left( \cos^2 \frac{x}{2} + \sin^2 \frac{x}{2} \right) 
+        - \left( \cos^2 \frac{x}{2} - \sin^2 \frac{x}{2} \right) \\
+      &= 2 \sin^2 \frac{x}{2} \\
+      &\leq 2 \left( \frac{x}{2} \right)^2 
+        &\left\{ \text{Pasinaudojame \ref{_sinx_x_02} neligybe.} \right\} \\
+      &= \frac{x^2}{2}.
+    \end{align}
+
+    Pagal trijų girtuoklių teoremą, kadangi:
+    \begin{align*}
+      \lim _{x \to 0^{+}} 0 &= 0 &\text{ ir } \\
+      \lim _{x \to 0^{+}} \frac{x^2}{2} &= 0 &\text{ tai ir } \\
+      \lim _{x \to 0^{+}} \left( 1 - \frac{\sin x}{x} \right) &= 0, 
+        &\text{o tai reiškia, kad} \\
+      \lim _{x \to 0^{+}} \frac{\sin x}{x} &= 1.
+    \end{align*}
+
+    Pažymėję $y = -x$, gauname:
+    \begin{align*}
+      \lim _{x \to 0^{-}} \frac{\sin x}{x} &=
+      \lim _{x \to 0^{-}} \frac{-\sin x}{-x} \\
+      &= \lim _{x \to 0^{-}} \frac{\sin(-x)}{-x} \\
+      &= \lim _{y \to 0^{+}} \frac{\sin y}{y} = 1
+    \end{align*}
+
+    Kadangi egzistuoja riba iš dešinės ir iš kairės, ir jos sutampa, tai
+    \begin{equation*}
+      \lim _{x \to 0} \frac{\sin x}{x} = 1
+    \end{equation*}
+
+  \end{proof}
+
+\end{exmp}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CaR>
+<Construction>
+<Window x="0.0" y="0.0" w="2.8284271247461916" showgrid="true"/>
+<Windowdim w="800" h="600"/>
+<Preferences minfontsize="18" minpointsize="3" minlinesize="1" arrowsize="15" digits.lengths="5" digits.edit="5" digits.angles="0" colorbackground="245,245,245" fig3D="false"/>
+<Grid axesonly="true" color="0" thickness="0"/>
+<Objects>
+<Point name="O" n="75" color="2" showname="true" x="0" actx="0.0" y="0" acty="0.0" shape="circle" fixed="true">Point at &quot;0&quot;, &quot;0&quot;</Point>
+<Line name="yAxis" n="1" yaxis="true">Y axis</Line>
+<Line name="xAxis" n="0" xaxis="true">X axis</Line>
+<Point name="P2" n="24" color="2" x="-0.9094324834951191" y="-0.4158516057007597" shape="circle">Point at -0.90943, -0.41585</Point>
+<Circle name="c4" n="15" color="4" through="P2" fixed="1" midpoint="O" acute="true">Circle around P1 through P2 with radius &quot;1&quot;</Circle>
+<PointOn name="P1" n="47" color="2" on="xAxis" alpha="0.25778069997686837" x="0.25778069997686837" y="0.0" shape="circle">Point on xAxis</PointOn>
+<PointOn name="P4" n="52" color="2" on="xAxis" alpha="1.2602611998869104" x="1.2602611998869104" y="0.0" shape="circle">Point on xAxis</PointOn>
+<PointOn name="P7" n="65" color="2" on="xAxis" alpha="0.794823824928677" x="0.794823824928677" y="0.0" shape="circle">Point on xAxis</PointOn>
+<PointOn name="D" n="26" color="2" showname="true" on="c4" alpha="0.9280004365024742" x="0.5994356760461402" y="0.800422932132199" shape="circle">Point on c4</PointOn>
+<Intersection name="B" n="33" color="2" showname="true" first="xAxis" second="c4" shape="circle" which="first">Intersection between xAxis and c4</Intersection>
+<Line name="l6" n="27" color="3" from="O" to="D">Line through P1 and P3</Line>
+<Plumb name="p1" n="30" color="3" point="D" line="xAxis" valid="true">Perpendicular line through P3 to xAxis</Plumb>
+<Line name="l7" n="69" color="3" from="D" to="B">Line through D and B</Line>
+<Parallel name="pl1" n="34" color="3" point="B" line="p1">Parallel line through P4 to p1</Parallel>
+<PointOn name="P3" n="50" color="2" on="l6" alpha="0.2622132547134349" x="0.15717997960740662" y="0.20988150218165472" shape="circle">Point on l6</PointOn>
+<Intersection name="A" n="39" color="2" showname="true" first="xAxis" second="p1" shape="circle">Intersection between xAxis and p1</Intersection>
+<PointOn name="P6" n="62" color="2" on="p1" alpha="-0.5704375421511941" x="0.5994356760461402" y="0.22998538998100482" shape="circle">Point on p1</PointOn>
+<Intersection name="C" n="40" color="2" showname="true" first="l6" second="pl1" shape="circle">Intersection between l6 and pl1</Intersection>
+<Angle name="x" n="51" color="1" scolor="128,128,128" showname="true" xcoffset="0.1595567049727943" ycoffset="0.0811652902977251" unit="°" first="P1" root="O" second="P3" display="large" filled="true" acute="true">Angle P1 - O - P3</Angle>
+<PointOn name="P5" n="55" color="2" on="pl1" alpha="0.36876961246690865" x="1.0" y="0.36876961246690865" shape="circle">Point on pl1</PointOn>
+<Angle name="a5" n="66" xcoffset="0.11636015488020321" ycoffset="0.13603845341352727" unit="°" first="P6" root="A" second="P7" display="small" filled="true" acute="true">Angle P6 - A - P7</Angle>
+<Angle name="a3" n="56" xcoffset="0.10322220338765271" ycoffset="0.14625772861181513" unit="°" first="P4" root="B" second="P5" display="small" filled="true" acute="true">Angle P4 - B - P5</Angle>
+</Objects>
+</Construction>
+</CaR>
