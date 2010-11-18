@@ -1,0 +1,109 @@
+\chapter{Funkcijų iškilumas}
+$f : A \to \SETR$
+\begin{defn}[Funkcijos grafikas]
+  $G(f) := \{ (x, f(x)) : x \in A \}$
+  Taškas $(x; y)$ yra žemiau taško $(x; Y)$, jeigu $y \leq Y$
+\end{defn}
+\include{grafikas}
+\[
+  f(x_2) - f(x_1) = (x_2 - x_1) \cdot \tg \alpha
+  \tg \alpha = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+  \tg \alpha = \frac{y - f(x_1)}{x - x_1}
+  \frac{y - f(x_1)}{x - x_1} = \frac{f(x_2) - f(x_1)}{x_2 - x_1}
+  y - f(x_1) = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \cdot (x - x_1)
+\] – funkcijos f styga, jungianti taškus $(x_1; f(x_1)$ ir $(x_2; f(x_2)$.
+
+\begin{defn}
+  Funkcija $f$ vadinamas iškila intervale $(a; b)$, jei
+  $\forall x_1, x_2 \in (a; b)$ funkcijos grafiko taškai
+  $\{(x, f(x)): x \in [x_1; x_2]\}$ yra žemiau funkcijos f stygos, kuri
+  jungia taškus $(x_1; f(x_1)$ ir $(x_2; f(x_2)$.
+
+  Fiksuojame $x$ ir $y \leq Y$, kur $y$ yra funkcijos $f$ reikšmė taške $x$,
+  o $Y$ – stygos reikšmė taške $x$.
+  $f(x) \leq \frac{f(x_2) - f(x_1)}{x_2 - x_1}(x - x_1 + f(x_2)$
+\end{defn}
+
+\begin{defn}
+  Funkcija $f$ yra iškila intervale $(a; b)$, jei
+  $\forall x_1, x_2 \in (a; b)$ teisingas nelygybė
+  $\frac{f(x) - f(x_1)}{x_2 - x_1} \leq \frac{f(x_2) - f(x_1)}{x_2 - x_1}$
+\end{defn}
+
+\begin{defn}
+  Funkcija $f$ yra įgaubta intervale $(a; b)$, jei
+  $\forall x_1, x_2 \in (a; b)$ teisingas nelygybė
+  $\frac{f(x) - f(x_1)}{x_2 - x_1} \geq \frac{f(x_2) - f(x_1)}{x_2 - x_1}$
+\end{defn}
+
+\begin{prop}
+  Iškila funkcija yra tolydi.
+\end{prop}
+
+\begin{prop}
+  Tarkime, $f$ yra diferencijuojama intervale $(a; b)$. Funkcija $f$ yra
+  iškila intervale $(a; b) \iff f'$ didėja.
+  \begin{proof}
+    Tarkime, $f$ yra iškila.
+    $\frac{f(x) - f(x_1)}{x - x_1} \leq \frac{f(x_2) - f(x)}{x_2 - x}
+    \forall x \in (x_1; x_2)$
+    iškilai funkcijai nustatyti $\forall x_1, x_2 \in (a; b)$
+
+    $x_1 \leq x' \leq x'' \leq x_2$
+    $\frac{f(x') - f(x_1)}{x' - x_1} \ leq \frac{f(x'') - f(x')}{x'' - x ')
+    \leq \frac{f(x_2) - f(x'')}{x_2 - x''} \implies f'(x_1) \leq f'(x_2)
+    \forall x_1, x_2 \in (a; b)
+    x_1 < x_2$
+    $x_1 \leq x' \leq x''$
+    $x' \leq x'' \leq x''$
+
+    Tarkime, f' yra didėjanti. Reikia įrodyti, kad $f$ yra iškila.
+    $x_1 \leq x_2 \leq x_3$ – galioja Lagrango teorema
+    $\exists c \in (x_1; x_2) : f(x_2) - f(x_1) = f'(c)(x_2 - x_1)$
+    $\exists c_2 \in (x_2; x_2) : f(x_3) - f(x_2) = f'(c_2)(x_3 - x_2)$
+    {čia dar kažkas}
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Tarkime, $f$ yra diferencijuojama du kartus.
+  $f'' \geq 0$, tai $f$ yra iškila.
+  $f'' \leq 0$, tai $f$ yra įgaubta.
+\end{prop}
+
+\begin{defn}
+  Tašką $x \in (a; b)$ vadiname vingio tašku, jei jame keičiasi funkcijos iškilumas.
+\end{defn}
+
+\begin{prop}
+  Jei $f$ yra diferencijuojama du kartus taške $c$, tai $f''(c) = 0$ yra būtina vingio taško sąlyga.
+\end{prop}
+
+\begin{prop}
+  Tarkime, $f$ yra du kartus diferencijuojama. Taškas $c$ yra vingio taškas
+  \iff kairėje taško $c f'' > 0$, o dešinėje – $f'' < 0$ arba atvirkščiai.
+\end{prop}
+
+\chapter{Asimptotės}
+
+I. Vertikalios asimptotės $x = x_0$
+
+Tiesė $x = x_0$ yra asimptotė, jei $\lim_{x \to x_0^+}{f(x) = \infty}$ arba
+$\lim_{x \to x_0^-}{f(x) = \infty}$
+
+II. Nevertikalios asimptotės $y = ax + b$
+
+Gali būti tik dvi: $x \to +\infty$ ir $x \to -\infty$.
+\begin{defn}
+  $\lim_{x \to +\infty}{(f(x) - (ax + b))} = 0$
+\end{defn}
+
+Svarbi tema: funkcijos tyrimas
+1) Kur kerta x, y ašis
+Periodinė/neperiodinė
+Lyginė/nelyginė
+2) Tyrimas ypatinguose taškuose: -\infty, +\infty ir trūkio taškai
+Trūkio taškų rūšys
+3) Didėjimo, mažėjimo intervalai; lokalūs ekstremumai
+4) iškila, įgaubta, vingio taškai
+5) asimptotės

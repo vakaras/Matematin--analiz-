@@ -1,0 +1,127 @@
+\chapter{Funkcijos išvestinė}
+
+$f : A \to \SETR
+A \subset \SETR
+a \in A$ yra vidinis aibės $A$ taškas
+
+\begin{defn}[Funkcijos išvestinė]
+  $f'(a) := \lim_{x \to a}{\frac{f(x) - f(a)}{x - a}}
+\end{defn}
+\begin{notation}
+  f'(a) \equiv \frac{df(a)}{dx} \equiv \frac{df(x)}{x}|_{x = a} \equiv f'(x)|_{x = a}$
+\end{notation}
+Jei $f'(a) \in \SETR$ sakome, kad funkcija f taške a yra diferencijuojama.
+
+\begin{exmp}
+  $s(t)$
+  $t$ – laikas, $s(t)$ – per $t$ laiko nueitas kelias
+  $s(t) - s(t_0)$ – per $t - t_0$ laiko nueitas kelias
+  $v_vid = \frac{s(t) - s(t_0)}{t - t_0}$
+  v_{t_0} = \lim_{t \to t_0}{\frac{s(t) - s(t_0)}{t - t_0}} = s'(t_0)
+\end{exmp}
+
+Geometrinė samprata
+$\frac{f(x) - f(a)}{x - a} = \tg \alpha$
+$x \to a$
+$f(x) - f(a) = (x - a) \tg \alpha$
+$\lim_{x \to a}{\frac{f(x) - f(a)}{x - a}} = \lim_{x \to a}{\tg \alpha}
+= \tg \alpha'$
+$\alpha'$ yra funkcijos $f$ liestinės taške $a$ su teigiama $x$-ų pusaše sudaromas kampas.
+Kaip rasti funkcijos $f$ liestinę taške $a$?
+\[
+  y = kx + b
+  k = f'(a)
+  f(a) = ka + b
+\]
+Parabolės išvestinė
+\[
+  (x^2)'|_{x = a} := \lim_{x \to a}{\frac{x^2 - a^2}{x - a}}
+    = \lim_{x \to a}{\frac{(x - a)(x + a)}{x - a}}
+    = \lim_{x \to a}{(x + a)} = a + a = 2a
+  (x^2)'|_{x = a}  = 2a
+  (x^2)' = 2x
+
+  f(0) = 2 \cdot 0 = 0
+  f'(1) = 2
+\]
+Modulio funkcijos išvestinė
+\[
+  f(x) = |x|
+  (|x|)'_{x ? 0} = \lim_{x \to 0}{\frac{|x| - 0}{x - 0}}
+    = \lim_{x \to 0}{\frac{|x|}{x}}
+    = \lim_{x \to 0}{
+      \begin{cases}
+        \frac{x}{x} & \text{, } x \geq 0
+        \frac{-x}{x} & \text{, } x < 0
+      \end{cases}
+    }
+    = \lim_{x \to 0}{
+      \begin {cases}
+        1 & \text{, } x \geq 0
+        -1 & \text{, } x < 0
+      \end{cases}
+    }
+\]
+
+\begin{defn}
+  Funkcija $f$ vadinama diferencijuojama taške $a$, jei
+  $\exists c \in \SETR$ toks, kad
+  $f(a + h) - f(a) = c \cdot h + o(h), h \to 0$
+  $c \cdot h$ vadinamas funkcijos $f$ diferencialo reikšme taške $a$ su pokyčiu $h$.
+  \begin{notation}
+    $d_h f(a) \equiv d f(a)$
+  \end{notation}
+  $f'(a) \equiv \frac{f(a + h) - f(a)}{(a + h) - a} = c + \frac{o(h)}{h}, h \to 0$
+\end{defn}
+\begin{defn}
+  Funkcijos f difrencialu atitinkančiu argumento pokytį $h$ vadiname funkcija
+    $x \to d_h f(x)$
+\end{defn}
+\begin{defn}
+  Funkcija $f$ yra diferencijuojama taške $a \iff \exists \text{baigtinė} f'(a)$
+  ir $d_h f(a) = f'(a) \cdot h$
+  \begin{notation}
+    $h \equiv dx \implies f'(x)dx = \frac{df(x)}{dx} \cdot dx$
+  \end{notation}
+\end{defn}
+
+\chapter{Išvestinės savybės}
+\begin{prop}
+  Jei $f$ ir $g$ yra diferencijuojamos taške $a$ ir $\alpha, \beta \in \SETR$,
+  tai $\alpha \cdot f$, $f + g$, $f \cdot g$ ir $\frac{f}{g}$ (jei $g \neq 0$)
+  yra diferencijuojamos ir teisinga
+  1) $(\alpha f)'(a) = \alpha f'(a)$
+  2) $(f + g)'(a) = f'(a) + g'(a)$
+  3) $(f \cdot g)'(a) = f'(a) \cdot g(a) + f(a) \cdot g'(a)$
+  3) $(\frac{f}{g})'(a) = \frac{f'(a) \cdot g(a) - f(a) \cdot g'(a)}{g^2(a)}$ % o taip, ten 3
+  \begin{proof}
+    $(f \cdot g)'(a)
+      =^{\text{Ap.}} \lim_{x \to a}{\frac{(f \cdot g)(x) - (f \cdot g)(a)}{x - a}}
+      = \lim_{x \to a}{\frac{f(x) \cdot g(x) - f(a) \cdot g(a)}{x - a}}
+      = \lim_{x \to a}{\frac{f(x)g(x) - f(x)g(a) + f(x)g(x) - f(a)g(a)}{x - a}}
+      = \lim_{x \to a}{f(x) \cdot \frac{g(x) - g(a)}{x - a}}
+        + \lim_{x \to a}{g(a) \cdot \frac{f(x) - f(a)}{x - a}} % jei f dif. taške a, tai f(x) - f(a) = f'(a)(x - a) + o(x - a); x \to a; f(x) - f(a) \to 0; \lim_{x \to a}{f(x)} = f(a) \implies yra tolydi ajlešjirae
+      =^{\text{ribų sav.}} \lim_{x \to a}{f(x)}
+         \cdot \lim_{x \to a}{\frac{g(x) - g(a)}{x - a}}
+         + \lim_{x \to a}{g(a)} \cdot \lim_{x \to a}{\frac{f(x) - f(a)}{x - a}}
+      = f(a) \cdot g'(a) + g(a) \cdot f'(a)$
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Jei $g$ yra diferencijuojama taške $a$ ir $f$ yra difejerš b = g(a), tai
+  $f \kompozicija g (a) = f'(b) g'(a) | f \kompozicija g'(a)
+  = f'(x) |_{x = g(a)} \cdot g'(x) |_{x = a}$
+  \begin{exmp}
+    \[
+      (\sin x^2)' = ?
+      f \kompozicija g (x) = \sin x^2
+      f(x) = \sin x
+      g(x) = x^2
+      (f \kompozicija g)'(a) = (\cos x) |_{x = a^2} \cdot (2x) |_{x = a} = \cos a^2 \cdot (2a)
+      g'(x) = (x^2)' = 2x
+      f'(x) = \cos x
+    \]
+  \end{exmp}
+  n. d. $(e^{\sin^2(10x))'
+\end{prop}

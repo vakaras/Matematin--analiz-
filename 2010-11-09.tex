@@ -1,0 +1,103 @@
+\chapter{Teiloro formulė}
+$f(x) = f(x_0) + \frac{f'(x_0)}{1!}(x - x_0)^1 + \cdots
+        + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n + r_n(x)$ (liekamasis narys)
+\begin{prop}
+  Tegu f n + 1 diferencijuojama intervale (a; b), x, x_0 \in (a; b)
+  tada $c \in (x; x_0) (arba c \in (x_0; x)
+        : r_n(x) = \frac{f^{(n + 1)}{c}a}{(n + 1)!}(x - x_0)^{n + 1}$
+  \begin{proof}
+    $\phi(t) = f(x) - f(t) - \frac{f'(t)}{1!}(x - t) - \cdots
+               - \frac{f^{(n)}(t)}{n!}(x - t)^n$
+    $\phi$ yra vieną kartą diferencijuojama pagal kintamąjį $t$,
+    nes $f^{(n + 1)}(t)$ egzistuoja.
+    $\phi'(t) = 0 - f'(t) - \frac{f''(t)}{1!}(x - t) 1 \frac{f'(t)}{1!}
+                - \frac{f'''(t)}{2!}(x - t)^2
+                - \frac{f''(t)}{2!} \cdot 2 \cdot (x - t) - \cdots
+                - \frac{f^{(n + 1)}}{n!}(x - t)^n
+              = - \frac{f^{(n + 1)}}{n!}(x - t)^n$
+    Paimkime naują funkciją $g$, kuri vieną kartą diferencijuojama.
+    $\phi$ ir $g$ tenkina Koši vidutinių reikšmių teormą
+    $\implies \exists c \in (x; x_0) : \frac{\phi(x) - \phi(x_0)}{g(x) - g(x_0)} = \frac{\phi'(c)}{g'(c)} (*)$
+    \[
+      \phi(x_0) = r_n(x)
+      \phi(x) = 0
+      \phi'(t) = - \frac{f^{n + 1}(t)}{n!}(x - t)^n
+    \]
+    Pasirenkame $g(t) = (x - t)^{n + 1}
+    g'(t) = (n + 1)(x - t)^n
+    g(x) = 0
+    g(x_0) = (x - x_0)^{n + 1}$
+    $\phi$ ir $g$ reikšmes surašome į $(*)$
+    $\frac{0 - r_n(x)}{-(x - x_0)^{n + 1}}
+      = \frac{\frac{f^{(n + 1)}(c)}{n!}(x - c)^n}{-(n + 1)(x - c)^n}
+      r_n(x) = \frac{f^{(n + 1)}(c)}{n!(n + 1)}(x - x_0)^{n + 1} = (n + 1)!$
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Jei $f$ yra $n$ kartų diferencijuojama taško x_0 aplinkoje ir $f^{(n)}$
+  yra tolydi taško $x_0$ aplinkoje, tai
+  $r_n(x) = o((x - x_0)^n)$, kai $x \to x_0$
+\end{prop}
+
+Užd.
+$f(x) = e^x
+x_0 = 0
+f^{(n)}(x) = e^x
+f^{(n)}(0) = 1
+f(x) = 1 + \frac{1}{1!}x^1 + \frac{1}{2!}x^2 + \frac{1}{3!}x^3 + \cdots
+       + \frac{1}{n!}x^n + r_n(x)$
+Teiloro formulė
+$\implies \exists c \in (0; x) : r_n(x) = \frac{e^c}{(n + 1)!}x^{n + 1}$
+Tarkime, $f$ nagrinėjame aplinkoje $|x| < 1$. Kokia paklaida?
+$|r_n(x)| \leq \frac{e^1}{(n + 1)!} \cdot 1 = \frac{e}{(n + 1)!}
+n \in +\infty r_n(x) \to 0$
+
+\chapter{Lokalūs ekstremumai}
+\begin{defn}
+  Taškas $a$ vadinamas lokaliu maksimumu, jei
+  $\exists U_a : f(x) \leq f(a) \forall x \in U_a$
+\end{defn}
+\begin{defn}
+  Taškas $a$ vadinamas lokaliu minimumu, jei
+  $\exists U_a : f(x) \geq f(a) \forall x \in U_a$
+\end{defn}
+\begin{defn}
+  Taškas $a$ vadinamas funkcijos maksimumo tašku, jei
+  $f(x) \leq f(a), \forall x \in A$ ($A$ – $f$ apibrėžimo sritis)
+\end{defn}
+\begin{defn}
+  Taškas $a$ vadinamas funkcijos minimumo tašku, jei
+  $f(x) \geq f(a), \forall x \in A$ ($A$ – $f$ apibrėžimo sritis)
+\end{defn}
+Sakykime, $f$ yra diferencijuojama. Iš Ferma teoremos \implies būtina
+lokalaus ektremumo sąlyga $f'(c) = 0$.
+\grafikai \implies jei taške $a$ funkcijos $f$ išvestinė keičia ženklą, tai
+taškas $a$ yra lokalaus ekstremumo taškas.
+
+\begin{exmp}
+  $f(x) = 3x^2 - 6x
+  f'(x) = 6x - 6$
+  1) Tikrinti būtino lokalaus ekstremumo sąlygas
+  $f'(x) = 0$
+  2) Taškuose, kuriuose būtino lokalaus ekstremumo sąlyga išpildyta,
+  tikrinti pakankamo lokalaus ekstremumo sąlygą.
+  1) $6x - 6 = 0$
+     $x = 1$ – jame išpildyta lokalaus ekstremumo sąlyga
+  2) $f'(x) = 6(x - 1)$ kairėje ($< 1$) neigiama, dešinėje ($> 1$) teigiama
+  Patikrinta: 1 yra lokalaus minimumo taškas.
+\end{exmp}
+\begin{exmp}
+  $f(x) = |x|
+  \not \exists f'(0)$
+  1) $f'(x) = 
+      \begin{cases}
+        1 & \text{, } x > 0
+        \text{neegzistuoja} & \text{, } x = 0
+        -1 & \text{, } x < 0
+      \end{cases}
+     $
+     Taške $x = 0$ sprendinių nėra, $f$ yra nediferencijuojama
+     \implies taške $0$ apibrėžtų kriterijų taikyti begalima.
+  dar kažkas
+\end{exmp}
