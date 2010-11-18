@@ -1,0 +1,89 @@
+Viršutinė ir apatinė ribos
+Ap. viršutinė \lim_{x \to a}{f(x)} = \lim_{\delta \to 0}{sup \{ f(x) : x \in B(a, \delta)_{x \neq a} \cap A \}
+Ap. apatinė \lim_{x \to a}{f(x)} = \lim_{\delta \to 0}{inf \{ f(x) : x \in B(a, \delta)_{x \neq a} \cap A \}
+T. \exists \lim_{x \to a}{f(x)} \iff apatinė \lim_{x \to a}{f(x)} = viršutinė \lim_{x \to a}{f(x)}
+Pvz. f(x) = \frac{\sqrt{x^2} + 2x}{\sin x} = \frac{|x| + 2x}{\sin x}, x = 0
+viršutinė \lim_{x \to 0}{f(x)} = ?
+       / \frac{3x}{\sin x}, x \geq 0
+f(x) = |                             = \lim_{x \to 0}{\frac{\sin x}{x}} = 1
+       \ \frac{x}{sin x}, x < 0
+|\sin x| \leq |x|
+|x||1 - |x|| \leq |\sin x|
+\sin(-x) = - \sin x
+x > 0:
+\frac{3x}{x} \leq \frac{3x}{\sin x} \leq \frac{3x}{x(1 - |x|)} = \frac{3x}{x(1 - x)}
+x < 0:
+1 = \frac{|x|}{|x|} \leq |\frac{x}{\sin x}| \leq \frac{|x|}{1 - |x|}
+
+h(x) = \frac{x}{1 - x}
+Ar h(x) didėja?
+x_1 < x_2
+h(x_1) \leq h(x_2)
+\frac{x_1}{1 - x_1} \leq^? \frac{x_2}{1 - x_2}
+x_1(1 - x_2) \leq x_2(1 - x_1)
+x_1 - x_1 x_2 \leq x_2 - x_2 x_1
+x_1 \leq x_2
+
+\leq sup \{ f(x) : x \in B(0, \delta \} \leq 3 \frac{1}{1 - \delta} \to 3
+
+Monotoniškos funkcijos
+T. f : A \to \SETR, a ribinis didžiausias aibės A taškas ir f yra monotonikša. Tada f turi ribą taške a. Ir jei f monotoniška ir aprėžta, tai riba taške a yra baigtinė.
+
+f(x) = x^2
+a = 1 A = (\frac{1}{2}; 1)
+x_1^2 \leq x_2^2, \forall x_1, x_2 \in A; \x_1 < x_2
+0 \leq x_2^2 - x_1^2 = (x_2 - x_1) \cdot (x_2 + x_1)
+\implies f(x) = x^2 intervale (\frac{1}{2}; 1) yra didėjanti
+
+Funkcijos tolydumas
+f : A \to \SETR, a \in A
+Ap. Funkcija f vadinama tolydžia taške a, jei \forall U_{f(a)} \exists U_a f(x) \in U_{f(a)} \forall U_a \cap A
+jei a izoliuotas aibės A taškas
+\lim_{x \to a}{f(x)} = f(a)
+
+f(x) = x^2 Ar ji tolydi taške a \in \SETR
+f(a) = a^2
+\lim_{x \to a}{x^2} = a^2
+\implies \lim_{x \to a}{f(x)} = f(a? \implies f(x) = x^2 yra tolydi taške a
+\implies f(x) = x^2 yra tolydi aibėje \SETR
+
+Ap. Funckija f vadinama tolydžia B, jei ji tolydi visuose aibės B taškuose.
+
+Trūkio taškų rūšys.
+f : A \to \SETR a \in A
+I rūšies trūkis. Jei \exists \lim_{x \to a^+}{f(x)}, \exists \lim_{x \to a^-}{f(x)} ir jos abi baigtinės, tai taškas a yra vadinamas I rūšies trūkiu.
+Jei \lim_{x \to a^+}{f(x)} = \lim_{x \to a^-}{f(x)} \implies \exists \lim_{x \to a}{f(x)} baigtinė, tai taškas a vadinamas pataisomu trūkio tašku.
+II rušies trūkis. Jei \not \exists \lim_{x \to a^+}{f(x)} arba \not \exists \lim_{x \to a^-}{f(x)} arba bent viena iš jų yra baigtinės, tai taškas a yra vadinamas II rūšies trūkiu.
+
+f(x) = \frac{x}{x}; a = 0; \lim_{x \to 0}{f(x)} \not = f(0), nes \not \exists f(0)
+\implies taškas x = 0 yra trūkio
+\lim_{x \to 0}{\frac{x}{x}} = 1 \implies x = 0 yra I rūšies trūkio taškas ir jis yra pataisomas
+
+f(x) = sign x; x = 0
+\lim_{x \to 0^+}{sign(x)} = 1
+\lim_{x \to 0^-}{sign(x)} = -1
+iš abiejų \implies x = 0 yra I rūšies trūkio taškas
+
+f(x) = \frac{1}{|x|}
+x = 0
+\lim_{x \to 0^+}{sign(x)} = + \infty
+\lim_{x \to 0^-}{sign(x)} = - \infty
+iš abiejų \implies x = 0 yra II rūšies trūkio taškas
+
+f(x) = \sin \frac{1}{x}; x = 0
+\not \exists \lim_{x \to 0}{sin \frac{1}{x}}
+\not \exists \lim_{x \to 0^+}{sin \frac{1}{x}}
+\not \exists \lim_{x \to 0^-}{sin \frac{1}{x}}
+x = 0 yra II rūšies trūkio taškas
+
+T. Jei f ir g yra tolydžios taške a, tai f + g, f \codt g ir \frac{f}{g} (jei g(a) \neq 0) yra tolydžios taške a.
+Įrodymo pradžia.
+(f + g)(x) := f(x) + g(x)
+(f \cdot g)(x) := f(x) \cdot g(x)
+Reikia įrodyti \lim_{x \to a}{(f + g)(x)} = (f + g)(a)
+Tikriname \lim_{x \to a}{(f + g)(x)} = \lim_{x \to a}{(f(x) + g(x))} = \lim_{x \to a}{f(x)} + \lim_{x \to a}{f(x)} = f(a) + g(a) = (f + g)(a)
+
+(f \kompozicija g)(x) = f(g(x))
+T. Jei g yra tolydi taške a ir f yra tolydi taške g(a), tai f \kompozicija g yra tolydi taške a
+Pvz. f(x) = \cos \sin (x^4 \ln x)
+tolydi \forall x > 0

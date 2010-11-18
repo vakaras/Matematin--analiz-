@@ -1,0 +1,141 @@
+\chapter{Funkcijos tolydumas}
+\begin{prop}[I Vejerštraso]
+  Tolydi funkcija f uždarame aprėžtame intervale yra aprėžta.
+  $f : [a; b] \to \SETR a, b \neq \infty$
+  \begin{proof}
+    Tarkime, $f$ nėra aprėžta iš viršaus.
+    Iš priešingo apibrėžimo $\implies \forall n \in \SETN \exists x_n \in [a; b] : f(x_n) > n$
+    Sukonstravome $\{x_n\}, a \leq x_n \leq b$
+    Iš Vejerštraso teoremos skaičių sekoms seka
+    $\exists \{x_{n_k}\} x_{n_k} \to x', n_k \to +\infty$
+    Iš sekų ribų elemento savybės $a \leq x_{n_k} \leq b ir x_{n_k} \to x'
+    \implies a \leq x' \leq b$
+    $f$ yra tolydi $\implies \lim_{x \to x'}{f(x)} = f(x')$, t. y.
+    $\lim_{x_{n_k} \to x'}{f(x_{n_k})} = f(x') \neq +\infty$
+    Iš $\forall n \in \SETN \exists x_n : f(x_n) > n
+    \implies \lim_{x_{n_k} \to x'}{f(x_{n_k})} = +\infty$
+    Gavome prieštarą.
+    Vadinasi, $f$ yra aprėžta iš viršaus.
+    Tą pačią įrodymo schemą pritaikome situacijai, kai $f$ nėra aprėžta iš apačios.
+  \end{proof}
+\end{prop}
+\begin{exmp}
+  Aibė $B$ vadinama aprėžta, jei $\exists c > 0 : |x| \leq c, \forall x \in \SETR$
+  $\SETN$ – neaprėžta
+  $(0; +\infty)$ – neaprėžta
+  $[0; 1]$ – aprėžta
+  $(0; 1000)$ – aprėžta
+
+  $y = x^2  [0; 100]            \implies y = x^2$ intervale $[0; 100]$ yra aprėžta
+  ↑ tolydi ↑ uždaras, aprėžta
+\end{exmp}
+\begin{priminimas}
+  Funkcija f vadinama aprėžta aibėje $B$, jei
+  $\exists c > 0 : |f(x)| \leq c, \forall x \in B$
+\end{priminimas}
+\begin{exmp}
+  $y = \frac{1}{x} (0; 1)$
+           ↑ tolydi ↑ aprėžtas, neuždaras!
+\end{exmp}
+\begin{exmp}
+  $y = x^2 [0; +\infty)$
+     ↑ tolydi ↑ uždaras, neaprėžtas!
+\end{exmp}
+
+
+\begin{prop}[II Vejerštraso]
+  Tolydi funkcija aprėžtame ir uždarame intervale turi šiame intervale
+  didžiausią ir mažiausią reikšmes.
+  \begin{exmp}
+    $y = \frac{1}{x} (0; 1)$
+                       ↑ neuždaras
+  \end{exmp}
+  \begin{proof}
+    Be.
+  \end{proof}
+\end{prop}
+
+\begin{prop}[I Bolcmano-Koši teorema]
+  Jei tolydi funkcija uždaro ir aprėžto intervalo kraštuose įgyja skirtingo
+  ženklo reikšmes, tai funkcija intervalo vidiniame taške įgyja reikšmę 0.
+  \begin{proof}
+    \[
+    f : [a; b]_{a, b \neq \infty} \to \SETR f(a) < 0, f(b) > 0
+    c = \frac{b + a}{2}
+    ---[---|---]-- 
+       a   c   b
+    \]
+    $[a; c]$ arba $[c; b]$ funkcijos intervalo kraštuose turės skirtingo
+    ženklo reikšmes.
+    $f(c) > 0$, tai $[a; c]$
+    $f(c) < 0$, tai $[c; b]$
+    $f(c) = 0$ – $c$ yra ieškomas taškas
+    Gautą intervalą pažymėkime $[a_1; b_1] (f(a_1) < 0, f(b_1) > 0)$
+    Renkamės vieną iš $[a_1; c_1]$ ir $[c_1; b_1]$, kuris galuose turės
+    skirtingų ženklų reikšmes.
+    Ir t. t.
+    Suformuojame įdėtųjų intervalų seką
+    $[a; b] \supset [a_1; b_1] \supset [a_2; b_2] \supset ...
+    b_n - a_n = \frac{b - a}{2^n} \to 0
+    \implies[susitraukiančiųjų intervalų lema] \exists c' \in [a; b] :
+    a_n \leq c' \leq b_n, \forall n
+    a_n \to c', b_n \to c'$
+    Turime $f(a_n) \leq 0, f(b_n) \geq 0$
+    $f$ tolydi, todėl $\lim_{a_n \to c'}{f(a_n)} = f(c')$
+    ir $\lim_{b_n \to c'}{f(b_n) = f(c')}$
+    \[
+      \implies f(a_n) \leq 0, \forall n
+      \lim_{n \to +\infty}{f(a_n)} \equiv \lim_{a_n \to c'}{f(a_n)} \leq 0
+      \implies f(c') \leq 0
+    \]
+  \end{proof}
+\end{prop}
+
+\begin{prop}[II Bolcmano-Koši]
+  Jei uždaro aprėžto intervalo kraštuose tolydi funkcija įgyja reikšmes $c$, $d$,
+  tai šiame intervale funkcija įgyja visas reikšmes iš intervalo $[c; d]$
+\end{prop}
+
+\chapter{Teoremos apie intervalo atvaizdavimą}
+\begin{prop}
+  Jei $f : I \to \SETR$ tolydi, $I$ – bet koks intervalas, tai $f(I)$ – intervalas
+\end{prop}
+\begin{prop}
+  Jei $f : I \to \SETR$ tolydi, $I$ – uždaras, aprėžtas intervalas,
+  tai $f(I)$ – uždaras, aprėžtas intervalas
+\end{prop}
+\begin{defn}
+  kompaktiškas intervalas = uždaras aprėžtas intervalas
+\end{defn}
+
+\chapter{Asimptominis funkcijų įvertinimas}
+\begin{defn}
+  Rašysime $f(x) = o(g(x))$, jei $\lim_{x \to a}{\frac{f(x)}{g(x)}} = 0$
+  (alternatyvus žymėjimas: $f(x) << g(x), x \to a$)
+  \begin{exmp}
+    $x^2 = o(x), x \to 0$, nes $\frac{x^2}{x} \to 0, x \to 0$
+  \end{exmp}
+  $f \in o(g(x))$, kai x \to a
+           ↑ funkcijų aibė
+  N. d.
+  $o(f(x)) + o(f(x)) = o(f(x))$
+  $x \to a$
+  \SETZ + \SETZ = \SETZ
+\end{defn}
+\begin{defn}
+  Rašysime $f(x) \sim g(x), x \to a$,
+  jei $\lim_{x \to a}{\frac{f(x)}{g(x)}} = 1$
+  \begin{exmp}
+    $\sin x \sim x, x \to 0, \lim_{x \to 0}{\frac{\sin x}{x}} = 1$
+  \end{exmp}
+\end{defn}
+\begin{defn}
+  Rašysime $f(x) = O(g(x)), x \in U$,
+  jei $\exists c > 0 : |f(x)| \leq c \cdost |g(x)| \forall x \in U$
+\end{defn}
+\begin{defn} FIXME
+  Rašysime $f(x) = O(g(x)), x \to a, x \in U$,
+  jei $\exists c > 0 : |f(x)| \leq c \cdost |g(x)| \forall x \in U$
+\end{defn}
+\begin{exmp}
+...
