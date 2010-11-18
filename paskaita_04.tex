@@ -1,0 +1,99 @@
+\section{Koši kriterijus}
+
+\begin{note}
+  Toliau tekste daroma prielaida, jog $f: A \to \RSET$ ir $a$ yra 
+  aibės $A$ ribinis taškas.
+\end{note}
+
+\begin{prop}
+  (Koši kriterijus) Funkcija $f$ turi baigtinę ribą taške $a$
+  (taškas $a$ gali būti ir $\infty$) tada ir tik tada:
+  \begin{equation}
+    \forall \varepsilon (\varepsilon > 0), \exists U_{a} :
+    | f(x') - f(x'') | < \varepsilon,
+    \forall x', x'' (x',x'' \in U_{a} \cap A, x' \neq a, x'' \neq a)
+    \label{kosi}
+  \end{equation}
+
+  \begin{proof}
+    \hfill \\
+    \begin{description}
+      \item[Būtinumas] Tarkime, jog $\exists \lim _{x \to a} f(x)$ ir ji
+        yra baigtinė. Reikia įrodyti \ref{kosi} teiginį.
+
+        Pažymėkime:
+        \begin{equation*}
+          \lim _{x \to a} f(x) = b.
+        \end{equation*}
+
+        Tada pagal funkcijos ribos apibrėžimą (\ref{limfed}):
+        \begin{equation*}
+          \lim _{x \to a} f(x) = b \iff 
+          \forall \varepsilon (\varepsilon > 0), \exists U_{a}:
+          | f(x) - b | < \varepsilon, 
+          \forall x (x \in U_{a} \cap A \setminus \{a\}).
+        \end{equation*}
+
+        Tada galime įvertinti:
+        \begin{align*}
+          | f(x') - f(x'') | &= | f(x') - b + b - f(x'') | \\
+          &\leq \underbrace{| f(x') - b |}_{ < \varepsilon } +
+          \underbrace{| f(x'') - b |}_{ < \varepsilon } \\
+          &< 2 \varepsilon, \forall x',x'' 
+          (x',x'' \in U_{a} \cap A \setminus \{a\}).
+        \end{align*}
+
+      \item[Pakankamumas] Tarkime, kad \ref{kosi} sąlyga teisinga. Reikia 
+        įrodyti, kad $\exists \lim _{x \to a} f(x)$ ir kad ji yra baigtinė.
+
+        Kadangi \ref{kosi} teisinga, tai:
+        \begin{equation}
+          \forall \varepsilon (\varepsilon > 0), \exists U_{a} :
+          | f(x') - f(x'') | < \varepsilon, \forall x',x''
+          (x',x'' \in U_{a} \cup A \setminus \{a\})
+          \label{_kosi_01}
+        \end{equation}
+
+        Imame bet kokią seką $\left\{ x_{n} \right\}, x_{n} \to a$. Pagal
+        sekos ribos apibrėžimą:
+        \begin{equation}
+          \forall U_{a}, \exists N : x_{n} \in U_{a}, \forall n (n > \NSET)
+          \label{_kosi_02}
+        \end{equation}
+
+        Tada iš \ref{_kosi_01} ir \ref{_kosi_02} gauname:
+        \begin{equation}
+          | f(x_{n}) - f(x_{m}) | < \varepsilon : \forall n, m (n,m > N)
+          \label{_kosi_03}
+        \end{equation}
+
+        Iš Koši kriterijaus skaičių sekoms ir \ref{_kosi_03} gauname, kad
+        seka $\left\{ f(x_{n}) \right\}$ turi baigtinę ribą.
+
+        Tam, kad pilnai būtų patenkintas \ref{limfs} funkcijos ribos 
+        apibrėžimas, reikia, kad ir 
+        $\left\{ x'_{n} \right\} x'_{n} \to a : \left\{ f(x'_{n}) \right\}$
+        turėtų tą pačią ribą, kaip ir $\left\{ f(x_{n}) \right\}$, 
+        kai $x_{n} \to a$.
+
+        Sukonstruokime seką
+        \begin{equation*}
+          x_{1},x'_{1},x_{2},x'_{2},x_{3},x'_{3},\ldots
+        \end{equation*}
+        ir pažymėkime ją $\left\{ y_{n} \right\}$.
+
+        Kadangi sekos $\left\{ y_{n} \right\}$ posekiai 
+        $\left\{ x_{n} \right\}$ ir $\left\{ x'_{n} \right\}$, kurie pilnai 
+        padengia visus jos narius, artėja į $a$, tai ir seka 
+        $\left\{ y_{n} \right\}$ artėja į $a$.
+
+        Iš Koši kriterijaus skaičių sekoms gauname, jog 
+        $\left\{ f(y_{n}) \right\}$ turi baigtinę ribą. Iš skaičių sekos
+        ribos apibrėžimo neprieštaringumo gauname, jog 
+        $\left\{ f(y_{2n}) \right\} = \left\{ f(x'_{n}) \right\}$ ir
+        $\left\{ f(y_{2n+1}) \right\} = \left\{ f(x_{n}) \right\}$ turi tą
+        pačią ribą.
+
+    \end{description}
+  \end{proof}
+\end{prop}
