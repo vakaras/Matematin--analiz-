@@ -98,6 +98,8 @@
   \end{proof}
 \end{prop}
 
+\section{Ribų skaičiavimo pavyzdžiai}
+
 \begin{exmp}
   Įrodysime, kad:
   \begin{equation*}
@@ -218,3 +220,101 @@
   \end{proof}
 
 \end{exmp}
+
+\begin{exmp}
+  Įrodysime, kad:
+  \begin{equation}
+    \lim _{x \to 0} (1 + x)^{\frac{1}{x}} = e
+    \label{_fx_e_01}
+  \end{equation}
+
+  \begin{proof}
+    Kadangi žinome, kad 
+    \begin{equation*}
+      \lim _{n \to +\infty} \left( 1 + \frac{1}{n} \right)^{n} = e
+    \end{equation*}
+    tai mūsų tikslas yra suvesti \ref{_fx_e_01} lygybę į šią.
+
+    Pažymėkime: FIXME: Paaiškinti, kodėl aibė nėra tuščia.
+    \begin{equation}
+      n_{k} = \min \underbrace{\left\{ 
+        n \in \NSET : n > \frac{1}{x_{k}} 
+        \right\}}_{\neq \emptyset}
+      \label{_fx_e_02}
+    \end{equation}
+
+    Iš čia gauname, kad
+    \begin{equation}
+      n_{k}-1 \leq \frac{1}{x_{k}} < n_{k}
+      \label{_fx_e_03}
+    \end{equation}
+
+    % 2010-09-28.txt
+    Paimkime seką ${x_{k}}, x_{k} \to 0^{+}, x_{k} \neq 0$ ir įsistatykime
+    į nelygybę: FIXME: Iš kur gautos tokios išraiškos? Kodėl 
+    vardiklyje $n_{k-1}$, o ne $n_{k+1}$?
+    \begin{equation}
+      \left( 1 + \frac{1}{n_{k}} \right)^{n_{k}-1} 
+      \leq (1 + \underbrace{x_{k}}_{> 0})^{\frac{1}{x_{k}}}
+      \leq \left( 1 + \frac{1}{n_{k-1}} \right)^{n_{k}}
+      \label{_fx_e_04}
+    \end{equation}
+
+    Kadangi FIXME: Kodėl $n_{k} \to +\infty$, o ne $k \to +\infty$?
+    \begin{align*}
+      \lim _{n_{k} \to +\infty} 
+        \left( 1 + \frac{1}{n_{k}} \right)^{n_{k}-1} 
+      &= \lim _{n_{k} \to +\infty} 
+        \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{-1}}_{\to 1}
+        \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{n_{k}}}_{\to e} \\
+      &= e
+    \end{align*}
+    ir 
+    \begin{align*}
+      \lim _{n_{k} \to +\infty}
+        \left( 1 + \frac{1}{n_{k-1}} \right)^{n_{k}}
+      &= \lim _{n_{k} \to +\infty} TODO: Išsiaiškinti.
+      %\underbrace{\left( 1 + \frac{1}{n_{k-1}<++>}<++> \right)<++>}<++>
+    \end{align*}
+
+  \end{proof}
+\end{exmp}
+
+\section{Viršutinė ir apatinė ribos}
+
+\begin{defn}[Viršutinė riba]
+  \begin{equation*}
+    \limsup _{x \to a} f(x) := 
+      \lim _{\delta \to 0} 
+      \sup \left\{ f(x), x \in A : |x - a| < \delta \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Apatinė riba]
+  \begin{equation*}
+    \liminf _{x \to a} f(x) :=
+      \lim _{\delta \to 0}
+      \inf \left\{ f(x), x \in A : |x - a| < \delta \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{exmp}
+  \begin{align*}
+    \limsup _{x \to 0} \left( \sin \frac{1}{x} \right) 
+    &= \lim _{\delta \to 0} \sup 
+      \left\{ \sin \frac{1}{x} : |x - a| < \delta \right\} \\
+    &= \lim _{\delta \to 0} 1 \\
+    &= 1
+  \end{align*}
+  \begin{align*}
+    \liminf _{x \to 0} \left( \sin \frac{1}{x} \right) 
+    &= \lim _{\delta \to 0} (-1) = -1
+  \end{align*}
+\end{exmp}
+
+\begin{prop}
+  \begin{equation*}
+    \exists \lim _{x \to a} f(x) \iff
+    \limsup _{x \to a} f(x) = \liminf _{x \to a} f(x)
+  \end{equation*}
+\end{prop}
