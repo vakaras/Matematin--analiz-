@@ -111,7 +111,7 @@
     Nubrėžkime vienetinį apskritimą ($|OD| = |OB| = 1$). Iš 
     brėžinio (\ref{fig:sinx_x}) matome, jog:
     \begin{equation}
-      S _{\Delta OBD} \leq S _{\text{išp.}OBD} \leq S _{\Delta OBC}
+      S _{\triangle OBD} \leq S _{\text{išp.}OBD} \leq S _{\triangle OBC}
       \label{_sinx_x_01}
     \end{equation}
 
@@ -125,7 +125,7 @@
 
     Apskaičiuokime trikampio $ODB$ plotą:
     \begin{align*}
-      S _{\Delta OBD} &= \frac{ |AD| |OB| }{2} \\
+      S _{\triangle OBD} &= \frac{ |AD| |OB| }{2} \\
       &= \frac{ |AD| }{2}, &\left\{ \text{ nes } |OB| = 1 \right\} \\
       &= \frac{ |OD| \sin x }{2}, 
       &\left\{ \text{ nes } \frac{ |AD| }{ |OD| } = \sin x \right\} \\
@@ -147,7 +147,7 @@
 
     Apskaičiuokime trikampio $OBC$ plotą:
     \begin{align*}
-      S_{\Delta OBC} &= \frac{ |OB| |BC| }{2} \\
+      S_{\triangle OBC} &= \frac{ |OB| |BC| }{2} \\
       &= \frac{ |OB| (|OB| \tg x)}{2}, 
         &\left\{ \text{ nes } \frac{|BC|}{|OB} = \tg x \right\} \\
       &= \frac{\tg x}{2} &\left\{ \text{ nes } |OB| = 1 \right\}
@@ -316,42 +316,3 @@
 
   \end{proof}
 \end{exmp}
-
-\section{Viršutinė ir apatinė ribos}
-
-\begin{defn}[Viršutinė riba]
-  \begin{equation*}
-    \limsup _{x \to a} f(x) := 
-      \lim _{\delta \to 0} 
-      \sup \left\{ f(x), x \in A : |x - a| < \delta \right\}
-  \end{equation*}
-\end{defn}
-
-\begin{defn}[Apatinė riba]
-  \begin{equation*}
-    \liminf _{x \to a} f(x) :=
-      \lim _{\delta \to 0}
-      \inf \left\{ f(x), x \in A : |x - a| < \delta \right\}
-  \end{equation*}
-\end{defn}
-
-\begin{exmp}
-  \begin{align*}
-    \limsup _{x \to 0} \left( \sin \frac{1}{x} \right) 
-    &= \lim _{\delta \to 0} \sup 
-      \left\{ \sin \frac{1}{x} : |x - a| < \delta \right\} \\
-    &= \lim _{\delta \to 0} 1 \\
-    &= 1
-  \end{align*}
-  \begin{align*}
-    \liminf _{x \to 0} \left( \sin \frac{1}{x} \right) 
-    &= \lim _{\delta \to 0} (-1) = -1
-  \end{align*}
-\end{exmp}
-
-\begin{prop}
-  \begin{equation*}
-    \exists \lim _{x \to a} f(x) \iff
-    \limsup _{x \to a} f(x) = \liminf _{x \to a} f(x)
-  \end{equation*}
-\end{prop}

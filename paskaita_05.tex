@@ -1,0 +1,66 @@
+\section{Viršutinė ir apatinė ribos}
+
+\begin{defn}[Viršutinė riba]
+  \begin{equation*}
+    \limsup _{x \to a} f(x) := 
+      \lim _{\delta \to 0} 
+      \sup \left\{ f(x), x \in A : |x - a| < \delta \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Apatinė riba]
+  \begin{equation*}
+    \liminf _{x \to a} f(x) :=
+      \lim _{\delta \to 0}
+      \inf \left\{ f(x), x \in A : |x - a| < \delta \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{exmp}
+  \begin{align*}
+    \limsup _{x \to 0} \left( \sin \frac{1}{x} \right) 
+    &= \lim _{\delta \to 0} \sup 
+      \left\{ \sin \frac{1}{x} : |x - a| < \delta \right\} \\
+    &= \lim _{\delta \to 0} 1 \\
+    &= 1
+  \end{align*}
+  \begin{align*}
+    \liminf _{x \to 0} \left( \sin \frac{1}{x} \right) 
+    &= \lim _{\delta \to 0} (-1) = -1
+  \end{align*}
+\end{exmp}
+
+\begin{prop}
+  \begin{equation*}
+    \exists \lim _{x \to a} f(x) \iff
+    \limsup _{x \to a} f(x) = \liminf _{x \to a} f(x)
+  \end{equation*}
+\end{prop}
+
+\begin{defn}[Viršutinė riba]
+  \begin{equation*}
+    \limsup _{x \to a} f(x) :=
+      \lim _{\delta \to 0}
+      \sup \left\{ f(x) : x 
+        (x \in U(a, \delta) \cap A \setminus \{a\}) 
+        \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Apatinė riba]
+  \begin{equation*}
+    \liminf _{x \to a} f(x) :=
+      \lim _{\delta \to 0}
+      \inf \left\{ f(x) : x 
+        (x \in U(a, \delta) \cap A \setminus \{a\}) 
+        \right\}
+  \end{equation*}
+\end{defn}
+
+\begin{notation}
+  \begin{align*}
+    \lim _{x \to a^{+}} f(x) &\equiv f(a^{+}) \\
+    \lim _{x \to a^{-}} f(x) &\equiv f(a^{-}) \\
+  \end{align*}
+\end{notation}
+
