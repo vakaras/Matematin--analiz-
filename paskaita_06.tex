@@ -1,0 +1,228 @@
+\begin{prop}
+  (I Vejerštraso) Tolydi funkcija $f$ uždarame, aprėžtame intervale yra
+  aprėžta. ($f : [a;b] \to \RSET$, kur $a, b \neq \infty$)
+
+  \begin{proof}
+    Tarkime $f$ nėra aprėžta iš viršaus. Iš priešingo apibrėžimo:
+    \begin{equation*}
+      \forall n (n \in \NSET), \exists x_{n} (x_{n} \in [a;b]) :
+        f(x_{n}) > n
+    \end{equation*}
+
+    Sukonstravome seką $\left\{ x_{n} \right\}$, kur 
+    $a \leq x_{n} \leq b$. Iš Vejerštraso teoremos skaičių sekoms:
+    $ \exists x_{n_{k}}$, kur $x_{n_{k}} \to x'$, 
+    kai $n_{k} \to +\infty$.
+
+    Iš skaičių sekų ribų elementariųjų savybių, kadangi 
+    $a \leq x_{n_{k}} \leq b$ ir $x_{n_{k}} \to x'$, tai 
+    $a \leq x' \leq b$.
+
+    Kadangi $f$ yra tolydi, tai 
+    \begin{equation*}
+      \lim _{x \to x'} f(x) = f(x'),
+    \end{equation*}
+    o tai reiškia, kad
+    \begin{equation*}
+      \lim _{x_{n_{k}} \to x'} f(x) = f(x') \neq +\infty.
+    \end{equation*}
+
+    Tuo tarpu iš to, kad
+    \begin{equation*}
+      \forall n (n \in \NSET), \exists x_{n} (x_{n} \in [a;b]) :
+        f(x_{n}) > n
+    \end{equation*}
+    seka, jog
+    \begin{equation*}
+      \lim _{x_{n_{k}} \to x'} f(x_{n_{k}}) = +\infty.
+    \end{equation*}
+
+    Gavome prieštarą. Vadinasi $f$ yra aprėžta iš viršaus. 
+
+    Analogiškai galime įrodyti, kad $f$ yra aprėžta iš apačios.
+  \end{proof}
+
+\end{prop}
+
+\begin{exmp}
+  Aibė $B$ vadiname aprėžta, jei 
+  $\exists c (c > 0) : |x| \leq c, \forall x (x \in B)$.
+  \begin{itemize}
+    \item $\NSET$ – neaprėžta.
+    \item $(0; +\infty)$ – neaprėžta.
+    \item $[0; 1]$ – aprėžta.
+    \item $(0; 1000)$ – aprėžta.
+  \end{itemize}
+\end{exmp}
+
+\begin{exmp}
+  $y = x^2$ – tolydi; $[0;100]$ – uždaras, aprėžtas. $y = x^2$ intervale
+  $[0; 100]$ yra aprėžta.
+\end{exmp}
+
+\begin{exmp}
+  $y = \frac{1}{x}$ – tolydi; $(0;1)$ – neuždaras, aprėžtas ir 
+  $y$ – nėra aprėžta.
+\end{exmp}
+
+\begin{exmp}
+  \begin{equation*}
+    y = 
+    \begin{cases}
+      \frac{1}{|x|}, & x \neq 0 \\
+      0, & x = 0.
+    \end{cases}
+  \end{equation*}
+  $y$ – netolydi; $[-1;1]$ – uždaras, aprėžtas ir $y$ – nėra aprėžta.
+\end{exmp}
+
+\begin{prop}
+  (II Vejerštraso) Tolydi funkcija aprėžtame ir uždarame intervale turi
+  didžiausią ir mažiausią reikšmes.
+\end{prop}
+
+\begin{prop}
+  (I Bolcano-Koši) Jei tolydi funkcija uždaro ir aprėžto intervalo 
+  kraštuose įgyja skirtingo ženklo reikšmes, tai funkcija intervalo
+  vidiniame taške įgyja reikšmę 0.
+
+  \begin{proof}
+    $f : [a;b] \to \RSET$, kur 
+    $a, b \notin \left\{ -\infty; +\infty \right\}$
+
+    Nemažindami bendrumo tarkime, kad $f(a) < 0$, o $f(b) > 0$.
+
+    Intervalą $[a;b]$ daliname per pusę $c = \frac{a + b}{2}$.
+    Galimi atvejai:
+    \begin{itemize}
+      \item Jei $f(c) = 0$, tai $c$ – ieškomas taškas.
+      \item Jei $f(c) < 0$, tai imame intervalą $[c;b]$.
+      \item Jei $f(c) > 0$, tai imame intervalą $[a;c]$.
+    \end{itemize}
+    Gautą intervalą pažymėkime $[a_{1};b_{1}]$ 
+    ($f(a_{1} < 0)$ ir $f(b_{1} > 0)$). Vėl skaičiuojame
+    $c_{1} = \frac{a_{1} + b_{1}}{2}$ ir renkamės vieną iš intervalų
+    $[a_{1};c_{1}]$ arba $[c_{1};b_{1}]$ (tą, kurio galai turi skirtingo
+    ženklo reikšmes) ir jį pažymime $[a_{2}; b_{2}]$. Taip tęsdami gauname
+    idėtųjų, uždarųjų intervalų seką:
+    \begin{equation}
+      [a;b] \supset [a_{1};b_{1}] \supset [a_{2};b_{2}] \supset \cdots
+      \label{_1bolc_kosi_01}
+    \end{equation}
+    kurių ilgis
+    \begin{equation}
+      b_{n} - a_{n} = \frac{b - a}{2^{n}} \to 0.
+      \label{_1bolc_kosi_02}
+    \end{equation}
+
+    Iš \ref{_1bolc_kosi_01} ir \ref{_1bolc_kosi_02} 
+    pagal susitraukiančiųjų itervalų lemą gauname, jog 
+    $\exists c' (c' \in [a;b]) : a_{n} \leq c' \leq b_{n}, \forall n$. 
+    Taigi $a_{n} \to c'$ ir $b_{n} \to c'$.
+
+    Turime, kad
+    \begin{equation}
+      f(a_{n}) \leq 0 \text{ ir } f(b_{n}) \geq 0.
+      \label{_1bolc_kosi_03}
+    \end{equation}
+
+    Iš to, kad $f$ tolydi:
+    \begin{align}
+      \lim _{a_{n} \to c'} f(a_{n}) &= f(c')
+      \label{_1bolc_kosi_04} \\
+      \lim _{b_{n} \to c'} f(b_{n}) &= f(c')
+      \label{_1bolc_kosi_05}
+    \end{align}
+
+    Iš \ref{_1bolc_kosi_03} ir \ref{_1bolc_kosi_04}:
+    \begin{equation}
+      \lim _{n \to +\infty} f(a_{n}) 
+        \equiv \lim _{a_{n} \to c'} f(a_{n}) \leq 0,
+        f(c') \leq 0.
+      \label{_1bolc_kosi_06}
+    \end{equation}
+
+    Iš \ref{_1bolc_kosi_03} ir \ref{_1bolc_kosi_05}:
+    \begin{equation}
+      \lim _{n \to +\infty} f(b_{n}) 
+        \equiv \lim _{b_{n} \to c'} f(b_{n}) \geq 0,
+        f(c') \geq 0.
+      \label{_1bolc_kosi_07}
+    \end{equation}
+
+    Iš \ref{_1bolc_kosi_06} ir \ref{_1bolc_kosi_07} gauname, kad
+    \begin{equation*}
+      f(c') = 0.
+    \end{equation*}
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  (II Bolcano-Koši) Jei uždaro ir aprėžto intervalo kraštuose tolydi
+  funkcija įgyja reikšmes $c$ ir $d$, tai šiame intervale funkcija įgyja
+  visas reikšmes iš intervalo $[c; d]$.
+\end{prop}
+
+\section{Teoremos apie intervalo atvaizdavimą}
+
+\begin{prop}
+  Jei $f : I \to \RSET$ yra tolydi, kur $I$ – bet koks intervalas, tai
+  $f(I)$ irgi yra intervalas.
+\end{prop}
+
+\begin{prop}
+  Jei $f : I \to \RSET$ yra tolydi, kur $I$ – uždaras, aprėžtas, tai 
+  $f(I)$ irgi yra uždaras ir aprėžtas intervalas.
+\end{prop}
+
+\begin{note}
+  Realiųjų skaičių erdvėje uždarą, aprėžtą intervalą galime vadinti
+  kompaktišku intervalu.
+\end{note}
+
+\section{Asimptotinis funkcijų įvertinimas}
+
+\begin{defn}[Funkcija asimptotiškai aprėžta iš apačios]
+  Rašysime $f(x) = o(g(x)), x \to a$, jei 
+  $\lim _{x \to a} \frac{f(x)}{g(x)} = 0$.
+\end{defn}
+
+\begin{notation}
+  Kai kur vietoj mažojo $o$ naudojamas toks žymėjimas: 
+  $f(x) \ll g(x), x \to a$.
+\end{notation}
+
+\begin{exmp}
+  $x^2 = o(x), x \to 0$, nes $\frac{x^2}{x} \to 0, x \to 0$.
+\end{exmp}
+
+\begin{note}
+  Žymėjimas yra tik susitarimas. Iš tikrųjų jis reiškia, jog
+  \begin{equation*}
+    f \in \underbrace{o(g(x))}_{\mathclap{\text{funkcijų aibė}}}, 
+      \text{ kai } x \to a.
+  \end{equation*}
+\end{note}
+
+\begin{defn}[Asimptotiškai panašios funkcijos]
+  Rašysime $f(x) \sim g(x), x \to a$, jei 
+  $\lim _{x \to a} \frac{f(x)}{g(x)} = 1$.
+\end{defn}
+
+\begin{exmp}
+  $\sin x \sim x, x \to 0$, nes $\lim _{x \to 0} \frac{\sin x}{x} = 1$.
+\end{exmp}
+
+\begin{defn}[Funkcija asimptotiškai aprėžta]
+  Rašysime $f(x) = O(g(x)), x \in U$, jei 
+  $\exists c (c > 0) : |f(x)| \leq c \cdot |g(x)|, \forall x (x \in U)$.
+\end{defn}
+
+\begin{defn}[Funkcija asimpotiškai aprėžta]
+  Rašysime $f(x) = O(g(x)), x \to a$, jei
+  $\exists c (c > 0): |f(x)| \leq c \cdot |g(x)|, \forall x (x \in U_{a})$.
+\end{defn}
+
+\begin{exmp}
+  $\sin x = O(1), x \to a$.
+\end{exmp}
