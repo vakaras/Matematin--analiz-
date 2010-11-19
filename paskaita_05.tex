@@ -64,3 +64,167 @@
   \end{align*}
 \end{notation}
 
+TODO: Įkelti pavyzdį.
+
+\section{Monotoniškos funkcijos}
+
+\begin{prop}
+  \label{lim_mon}
+  $f: A \to \RSET$, $a$ – ribinis ir didžiausias $A$ taškas ir $f$ yra
+  monotoniška. Tada $f$ turi ribą taške $a$. Ir jei $f$ yra ir apibrėžta,
+  tai riba taške $a$ yra baigtinė.
+\end{prop}
+
+\begin{exmp}
+  Įrodyti, kad $f(x), f(x) = x^2$, taške $a, a = 1$, turi baigtinę ribą.
+  Apibrėžimo sritis $A = \left( \frac{1}{2}; 1 \right)$.
+
+  \begin{proof}
+    Pirma parodysime, kad $f(x)$ intervale $A$ didėja. Paimkime 
+    $x_{1}$ ir $x_{2}$, tokius, kad $x_{1} < x_{2}$. Tada:
+
+    \begin{align*}
+      f(x_{2}) - f(x_{1}) 
+      &= x _{2} ^{2} - x _{1} ^{2} \\
+      &= \underbrace{(x_{2} - x_{1})}_{> 0}
+        \underbrace{(x_{2} + x_{1})}_{> 0}
+    \end{align*}
+
+    Gavome, kad $f(x_{2}) > f(x_{1})$, o tai reiškia, kad $f(x)$ intervale
+    $\left( \frac{1}{2} ; 1 \right)$ didėja. Taigi pagal \ref{lim_mon}
+    teiginį $\exists \lim _{x \to a} f(x)$.
+
+    Ar $f(x)$ yra aprėžta? Tai yra ar
+    \begin{equation*}
+      \exists c (c \in \RSET) : x^{2} \leq c, \forall x (x \in A)?
+    \end{equation*}
+    Taip $c = 1$. Taigi $\lim _{x \to 1} x^{2}$ yra baigtinė.
+  \end{proof}
+\end{exmp}
+
+\section{Funkcijos tolydumas}
+
+\begin{defn}[Tolydi taške funkcija]
+  Funkcija $f$ vadiname tolydžia taške $a$, jei 
+  \begin{equation*}
+    \forall U_{f(a)}, \exists U_{a} : 
+      f(x) \in U_{f(a)}, \forall x (x \in U_{a} \cap A)
+  \end{equation*}
+\end{defn}
+
+$f(x)$ gali būti tolydi taške $a$ dviem atvejais:
+\begin{enumerate}
+  \item jei $a$ – izoliuotas aibės $A$ taškas, ir 
+  \item jei $a$ – ribinis aibės $A$ taškas bei 
+    $\lim _{x \to a} f(x) = f(a)$.
+\end{enumerate}
+
+\begin{defn}[Tolydi aibėje funkcija]
+  Funkcija $f$ vadinama tolydžia aibėje $B$, jei ji yra tolydi visuose
+  aibės $B$ taškuose.
+\end{defn}
+
+\begin{note}
+  Toliau $f: A \to B$ ir $a \in A$.
+\end{note}
+
+\begin{defn}[Trūkio taškų tipai]
+  \begin{description}
+    \hfill \\
+    \item[1 rūšies trūkis] Jei 
+      \begin{equation*}
+        \exists \lim _{x \to a^{-}} f(x) 
+        \text{ ir }
+        \exists \lim _{x \to a^{+}} f(x) 
+      \end{equation*}
+       ir jos abi yra baigtinės, tai
+      taškas a yra vadinamas 1 rūšies trūkiu.
+    \item[pataisomas trūkis] Jei
+      \begin{equation*}
+        \lim _{x \to a^{-}} f(x) = \lim _{x \to a^{-}} f(x) 
+        \implies \exists \lim _{x \to a} f(x)
+      \end{equation*}
+      yra baigtinė, tai taškas $a$ vadinamas pataisomu trūkio tašku.
+    \item[2 rūšies trūkis] Jei
+      \begin{equation*}
+        \nexists \lim _{x \to a^{-}} f(x)
+        \text{ arba }
+        \nexists \lim _{x \to a^{+}} f(x),
+      \end{equation*}
+      arba bent viena iš jų yra begalinė, tai taškas $a$ yra vadinamas
+      2 rūšies trūkiu.
+  \end{description}
+\end{defn}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = \frac{x}{x}, a = 0
+  \end{equation*}
+
+  Kadangi $\lim _{x \to 0} f(x) \neq f(0)$, nes $\nexists f(0)$, tai
+  taškas $x = 0$ yra trūkio.
+
+  Kadangi $\lim _{x \to 0} \frac{x}{x} = 1$, tai $x = 0$ yra 1 rūšies
+  trūkio taškas ir jis yra pataisomas.
+\end{exmp}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = \sign(x), a = 0
+  \end{equation*}
+
+  Kadangi
+  \begin{align*}
+    \lim _{x \to 0^{+}} \sign(x) &= 1 \\
+    \lim _{x \to 0^{-}} \sign(x) &= -1,
+  \end{align*}
+  tai $x = 0$ yra 1 rūšies trūkio taškas.
+\end{exmp}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = \frac{1}{|x|}, a = 0
+  \end{equation*}
+
+  Kadangi
+  \begin{align*}
+    \lim _{x \to 0^{+}} \frac{1}{|x|} &= +\infty \\
+    \lim _{x \to 0^{-}} \frac{1}{|x|} &= +\infty,
+  \end{align*}
+  tai $x = 0$ yra 2 rūšies trūkio taškas.
+\end{exmp}
+
+\begin{prop}
+  Jei $f$ ir $g$ yra tolydžios taške $a$, tai ir 
+  $f + g$, $f - g$, $f \cdot g$ bei $\frac{f}{g}$ (jei $g(a) \neq 0$) 
+  yra tolydžios taške $a$.
+
+  \begin{proof}
+    Žymėjimas:
+    \begin{equation*}
+      (f + g)(x) := f(x) + g(x)
+    \end{equation*}
+
+    Įrodysime, kad jei $f$ ir $g$ yra tolydžios taške $a$, tai ir 
+    $(f + g)(x)$ yra tolydi taške $a$.
+
+    Tarkime, jog $f$ ir $g$ yra tolydžios taške $a$. Reikia įrodyti:
+    \begin{equation*}
+      \lim _{x \to a} (f + g)(x) = (f + g)(a)
+    \end{equation*}
+
+    Tikriname:
+    \begin{align*}
+      \lim _{x \to a} (f + g)(x)
+      &= \lim _{x \to a} (f(x) + g(x)) \\
+      &= \lim _{x \to a} f(x) + \lim _{x \to a} g(x) \\
+      &= f(a) + g(a)
+      &= (f + g)(a)
+    \end{align*}
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  $ (f \circ g)(x) := f(g(x))$ Jei $g$ yra tolydi taške $a$ ir 
+  $f$ yra tolydi taške $g(a)$, tai $f \circ g$ yra tolydi taške $a$.
+\end{prop}
