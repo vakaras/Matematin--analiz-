@@ -229,52 +229,89 @@
   \end{equation}
 
   \begin{proof}
-    Kadangi žinome, kad 
+
+    Iš pradžių įrodysime, kad funkcijos $f(x) = (1 + x)^{\frac{1}{x}}$ 
+    riba iš dešinės taške $x = 0$ yra lygi $e$.
+
+    Sakykime, $x_k > 0$ ir $x_k \to 0 (k \in \NSET)$. Pažymėkime $n_k$ 
+    mažiausią natūrinį skaičių, didesnį už $\frac{1}{x_k}$, tai yra 
     \begin{equation*}
-      \lim _{n \to +\infty} \left( 1 + \frac{1}{n} \right)^{n} = e
+      n_{k} = min \left\{ n \in \NSET : n > \frac{1}{x_{k}} \right\}
     \end{equation*}
-    tai mūsų tikslas yra suvesti \ref{_fx_e_01} lygybę į šią.
+    Iš Archimedo principo žinome, kad toks skaičius visada egzistuoja.
+    Dabar galime įvertinti $\frac{1}{x_k}$:
+    \begin{equation*}
+      n_k - 1 \leq \frac{1}{x_k} < n_k.
+    \end{equation*}
 
-    Pažymėkime: FIXME: Paaiškinti, kodėl aibė nėra tuščia.
-    \begin{equation}
-      n_{k} = \min \underbrace{\left\{ 
-        n \in \NSET : n > \frac{1}{x_{k}} 
-        \right\}}_{\neq \emptyset}
-      \label{_fx_e_02}
-    \end{equation}
+    Atlikę trivialius pertvarkymus gauname $x_k$ įvertinimą:
+    \begin{equation*}
+      \frac{1}{n_{k}} < x_k \leq \frac{1}{n_{k} - 1}.
+    \end{equation*}
 
-    Iš čia gauname, kad
+    Akivaizdu, kad $(1 + x_{k})^\frac{1}{x_{k}}$ pagrindą ir laipsnį 
+    pakeitę ne didesniais, gausime ne didesnį skaičių. Tai yra:
     \begin{equation}
-      n_{k}-1 \leq \frac{1}{x_{k}} < n_{k}
+      \left( 1 + \frac{1}{n_{k}} \right)^{n_{k} - 1}
+      \leq (1 + x_{k})^\frac{1}{x_{k}}.
       \label{_fx_e_03}
     \end{equation}
 
-    % 2010-09-28.txt
-    Paimkime seką ${x_{k}}, x_{k} \to 0^{+}, x_{k} \neq 0$ ir įsistatykime
-    į nelygybę: FIXME: Iš kur gautos tokios išraiškos? Kodėl 
-    vardiklyje $n_{k-1}$, o ne $n_{k+1}$?
+    Taip pat pakeitę ne mažesniais gausime ne mažesnį skaičių:
     \begin{equation}
-      \left( 1 + \frac{1}{n_{k}} \right)^{n_{k}-1} 
-      \leq (1 + \underbrace{x_{k}}_{> 0})^{\frac{1}{x_{k}}}
-      \leq \left( 1 + \frac{1}{n_{k-1}} \right)^{n_{k}}
+      (1 + x_{k})^{\frac{1}{x_{k}}} 
+      \leq \left( 1 + \frac{1}{n_{k} - 1} \right)^{n_{k}}
       \label{_fx_e_04}
     \end{equation}
 
-    Kadangi FIXME: Kodėl $n_{k} \to +\infty$, o ne $k \to +\infty$?
+    Kairiąją \ref{_fx_e_03} nelygybės pusę galime pertvarkyti į 
+    \begin{equation}
+      \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{-1}}_{\to 1}
+      \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{n_{k}}}_{\to e}
+      \label{_fx_e_05}
+    \end{equation}
+
+    Dešiniąją \ref{_fx_e_04} nelygybės pusę galime pertvarkyti į
+    \begin{equation}
+      \underbrace{\left( 1 + \frac{1}{n_{k}-1} \right)^{n_{k}-1}}_{\to e}
+      \underbrace{\left( 1 + \frac{1}{n_{k}-1} \right)^{1}}_{\to 1}
+      \label{_fx_e_06}
+    \end{equation}
+
+    Kadangi skaičių $y_{n} = (1 + \frac{1}{n})^n$ seka, kai 
+    $n \to +\infty$, turi ribą $e$, tai ir seka $y_{n_{k}}$, kuri
+    gali skirtis nuo sekos $y_{n}$ posekio tik narių tvarka turi 
+    tą pačią ribą $e$. Taigi \ref{_fx_e_05} ir \ref{_fx_e_06} 
+    konverguoja į skaičių $e$. Todėl, pagal dviejų policininkų
+    principą, ir seka $(1 + x_{k})^{\frac{1}{x_{k}}}$ konverguoja į
+    $e$. Pagal funkcijos ribos apibrėžimą sekoms (\ref{limfs})
+    gauname:
+    \begin{equation}
+      \lim _{x \to 0^{+}} (1 + x)^{\frac{1}{x}} = e.
+      \label{_fx_e_07}
+    \end{equation}
+
+    Dabar įrodysime, kad ir 
+    $\lim _{x \to 0^{-}} (1 + x)^{\frac{1}{x}} = e$. Sakykime, kad
+    $-1 < x < 0$ ir pažymėkime $y = -x$. Tada
     \begin{align*}
-      \lim _{n_{k} \to +\infty} 
-        \left( 1 + \frac{1}{n_{k}} \right)^{n_{k}-1} 
-      &= \lim _{n_{k} \to +\infty} 
-        \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{-1}}_{\to 1}
-        \underbrace{\left( 1 + \frac{1}{n_{k}} \right)^{n_{k}}}_{\to e} \\
-      &= e
-    \end{align*}
-    ir 
-    \begin{align*}
-      \lim _{n_{k} \to +\infty}
-        \left( 1 + \frac{1}{n_{k-1}} \right)^{n_{k}}
-      &= \lim _{n_{k} \to +\infty} TODO: Išsiaiškinti.
-      %\underbrace{\left( 1 + \frac{1}{n_{k-1}<++>}<++> \right)<++>}<++>
+      \lim _{x \to 0^{-}} (1 + x)^{\frac{1}{x}} 
+      &= \lim _{y \to 0^{+}} (1 - y)^{-\frac{1}{y}} \\
+      &= \lim _{y \to 0^{+}} 
+        \left( \frac{1}{1 - y} \right)^{\frac{1}{y}} \\
+      &= \lim _{y \to 0^{+}} 
+        \left( 1 + \frac{1}{1 - y} - 1 \right)^{\frac{1}{y}} \\
+      &= \lim _{y \to 0^{+}} 
+        \left( 1 + \frac{y}{1 - y} \right)^{\frac{1}{y}} \\
+      &= \lim _{y \to 0^{+}} 
+        \left( 1 + \frac{y}{1 - y} \right)^{\frac{1}{y} - 1}
+        \left( 1 + \frac{y}{1 - y} \right)^{1} \\
+      &= \lim _{y \to 0^{+}} 
+        \underbrace{
+          \left( 1 + \frac{y}{1 - y} \right)^{\frac{1 - y}{y}}}_{\to e}
+        \underbrace{
+          \left( 1 + \frac{y}{1 - y} \right)^{1}}_{\to 1} \\
+      &= e.
     \end{align*}
 
   \end{proof}
