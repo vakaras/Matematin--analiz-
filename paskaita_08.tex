@@ -1,0 +1,109 @@
+\begin{prop}
+  (Monotoniškumo kriterijus) Tegu $f: I \to \RSET$ (I – intervalas) yra
+  diferencijuojama visame $I$. Tada:
+  \begin{align*}
+    \text{Funkcija } f \text{ intervale } I \text{ didėja } 
+    &\iff f'(x) \geq 0, \forall x (x \in I) \\
+    \text{Funkcija } f \text{ intervale } I \text{ mažėja } 
+    &\iff f'(x) \leq 0, \forall x (x \in I)
+  \end{align*}.
+
+  \begin{proof}
+    \begin{description}
+      \item[Būtinumas] Tegu $f$ didėja intervale $I$. Tada reikia įrodyti,
+        kad $f'(x) \geq 0, \forall x (x \in I)$. 
+        
+        Fiksuojame $x_{0} (x_{0} \in I)$.
+
+        Jei $x > x_{0}$, tai
+        \begin{equation}
+          \frac{\overbrace{f(x) - f(x_{0})}^{\geq 0}}{
+            \underbrace{x - x_{0}}_{\geq 0}} 
+          \implies \geq 0
+          \label{_monot_01}
+        \end{equation}
+
+        Jei $x < x_{0}$, tai
+        \begin{equation}
+          \frac{\overbrace{f(x) - f(x_{0})}^{\leq 0}}{
+            \underbrace{x - x_{0}}_{\leq 0}}
+          \implies \geq 0
+          \label{_monot_02}
+        \end{equation}
+
+        Kai $x \to x_{0}$, tai 
+        \begin{equation}
+          \lim _{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}}
+          \underbrace{\geq}_{
+            \mathclap{\text{Seka iš \ref{_monot_01} ir \ref{_monot_02}}}}
+          0
+          \label{_monot_03}
+        \end{equation}
+
+        Iš \ref{_monot_03}: 
+        $f'(x_{0}) \geq 0, \forall x_{0} (x_{0} \in I).$
+      \item[Pakankamumas] Tarkime, kad 
+        $f'(x) \geq 0, \forall x (x \in I)$. Reikia įrodyti, kad 
+        $f$ didėja intervale $I$.
+
+        Imame du taškus 
+        $x_{1}, x_{2} (x_{1},x_{2} \in I \text{ir} x_{1} < x_{2})$.
+        Aišku, kad $[x_{1};x_{2}] \subset I$ ir $[x_{1}; x_{2}]$ –
+        $f$ tolydi, o $(x_{1}; x_{2})$ – diferencijuojama.
+
+        Tada iš Lagranžo teoremos:
+        \begin{equation*}
+          \exists c (c \in (x_{1};x_{2})) : 
+            f(x_{2}) - f(x_{1}) = 
+            \underbrace{f'(c)}_{\geq 0}
+            \underbrace{(x_{2} - x_{1})}_{\geq 0}.
+        \end{equation*}
+        Kadangi dešinė pusė $\geq 0$, tai ir kairė pusė:
+        \begin{align*}
+          f(x_{2}) - f(x_{1}) &\geq 0 \\
+          f(x_{2}) &\geq f(x_{1}), \forall x_{1}, x_{2} 
+            (x_{1}, x_{2} \in I \text{ ir } x_{2} > x_{1})
+        \end{align*}.
+        Gavome, kad $f$ didėja visame intervale $I$.
+
+    \end{description}
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  (Liopitalio taisyklė) Tarkime, jog išpildytos šios salygos:
+  \begin{enumerate}
+    \item $\exists \lim _{x \to a} \frac{f'(x)}{g'(x)}$
+    \item $f(a^{+}) = g(a^{+}) = 0$ arba 
+      $g(a^{+}) = f(a^{+}) = \pm \infty$.
+    \item $g'(x) \neq 0, \forall x (x \in A)$.
+  \end{enumerate}
+
+  Tada teisinga:
+  \begin{equation*}
+    \lim _{x \to a^{+}} \frac{f(x)}{g(x)} = 
+    \lim _{x \to a^{+}} \frac{f'(x)}{g'(x)}.
+  \end{equation*}
+\end{prop}
+
+\begin{note}
+  Liopitalio taisyklė galioja taip pat, kai $x \to a^{-}$ ir kai 
+  $x \to a$.
+\end{note}
+
+\begin{exmp}
+  \begin{align}
+    \lim _{x \to +\infty} \frac{\ln x}{x}
+    &\underbrace{=}_{\mathclap{
+      \text{Darome prielaidą, jog pirma Liopitalio taisyklės 
+      prielaida yra tenkinama.}}}
+    \lim _{x \to +\infty} \frac{(\ln x)'}{(x)'}
+    \label{_liopital_exmp_01} \\
+    &= \lim _{x \to +\infty} \frac{\frac{1}{x}}{1} \\
+    &= 0
+    \label{_liopital_exmp_02}
+  \end{align}
+
+  Kadangi suskaičiavome ribą, vadinasi ji egzistuoja ir todėl mūsų
+  \ref{_liopital_exmp_01} padaryta prielada yra teisinga.
+\end{exmp}
