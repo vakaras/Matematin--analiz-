@@ -64,7 +64,78 @@
   \end{align*}
 \end{notation}
 
-TODO: Įkelti pavyzdį.
+\begin{exmp}
+  Suskaičiuokite ribą:
+  \begin{equation*}
+    \limsup _{x \to 0} \frac{\sqrt{x^2} + 2x}{\sin x}
+  \end{equation*}
+
+  FIXME: Sutvarkyti modulio ženklus.
+
+  Pažymėkime ir pertvarkykime:
+  \begin{align*}
+    f(x) 
+    &= \frac{\sqrt{x^2} + 2x}{\sin x} \\
+    &= \frac{|x| + 2x}{\sin x}, & \text{ kur } x \neq 0; \\
+    f(x) 
+    &=
+    \begin{cases}
+      \frac{3x}{\sin x}, & x \geq 0 \\
+      \frac{x}{\sin x}, & x < 0
+    \end{cases}.
+  \end{align*}
+
+  Iš $\lim _{x \to 0} \frac{\sin x}{x} = 1$ įrodymo 
+  (\ref{lim_sinx_x} pavyzdys) žinome, kad $\sin |x| \leq |x|$ ir 
+  kad $\cos |x| \leq \frac{\sin |x|}{|x|}$. Atlikę
+  kelis pertvarkymus (verta pastebėti, kad visus veiksmus atliekame
+  0 aplinkoje)
+  \begin{align*}
+    \sin |x| &\leq |x| \\
+    \sqrt{1 - \cos ^{2} |x|} &\leq |x| \\
+    1 - \cos^{2} |x| &\leq |x|^{2} \\
+    1 - |x|^{2} &\leq \cos^{2} |x| \\
+    (1 - |x|)(1 + |x|) &\leq \cos^{2} |x| \\
+    (1 - |x|) &\leq \frac{\cos^{2} |x|}{1 + |x|} \\
+      &\leq \cos^{2} |x| \\
+      &\leq \cos |x|.
+  \end{align*}
+  gavome, jog:
+  \begin{equation*}
+    1 - |x| \leq \cos |x|.
+  \end{equation*}
+
+  Dabar galime įvertinti $|\sin x|$:
+  \begin{equation*}
+    |x|(1 - |x|) \leq |\sin x| \leq |x|.
+  \end{equation*}
+
+  Taigi $\left| \frac{3x}{\sin x} \right|$ galime įvertinti:
+  \begin{equation*}
+    3 = \frac{3x}{x} \leq \frac{3x}{\sin x} \leq \frac{3x}{x(1 - |x|)}
+    = \frac{3}{1 - x} = 3 \frac{1}{1 - x},
+  \end{equation*}
+  o $\left| \frac{x}{\sin x} \right|$:
+  \begin{equation*}
+    1 = \frac{|x|}{|x|} \leq \left| \frac{x}{\sin x} \right| \leq
+    \frac{|x|}{|x|(1 - |x|)} = \frac{1}{1 - |x|}.
+  \end{equation*}
+
+  Dabar galime įvertinti
+  \begin{equation*}
+    h(\delta) = \sup \left\{ f(x) : x 
+      (x \in U(a, \delta) \cap A \setminus \left\{ a \right\}) \right\}.
+  \end{equation*}
+  Gauname: (FIXME: neaiški vieta.)
+  \begin{equation*}
+    3 \leq h(\delta) \leq 3 \frac{1}{1 - \delta}.
+  \end{equation*}
+
+  Taigi
+  \begin{equation*}
+    \lim _{\delta \to 0} h(\delta) = 3.
+  \end{equation*}
+\end{exmp}
 
 \section{Monotoniškos funkcijos}
 
