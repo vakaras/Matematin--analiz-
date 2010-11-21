@@ -258,3 +258,188 @@ diferencijuojama.
 \section{Elementariųjų funkcijų išvestinės}
 
 Sąrašą žr. \ref{dx_formulynas}.
+
+\begin{exmp}
+  \begin{align*}
+    (\sin x)'|_{x=a}
+    &= \lim _{x \to a} \frac{\sin x - \sin a}{x - a} \\
+    &= \lim _{x \to a} \frac{
+      2 \sin \left( \frac{x - a}{2} \right) 
+      \cos \left( \frac{x + a}{2} \right)
+      }{x - a} \\
+    &= \lim _{x \to a} 
+      \underbrace{
+        \frac{\sin \left( \frac{x - a}{2} \right)}{\frac{x - a}{2}}
+      }_{\to 1}
+      \frac{2 \cos \left( \frac{x + a}{2} \right)}{2} \\
+      &= \lim _{x \to a} \cos \frac{x + a}{2} \\
+      &= \cos a
+  \end{align*}
+
+  Taigi
+  \begin{equation*}
+    (\sin x)' = \cos x, \forall x (x \in \RSET).
+  \end{equation*}
+\end{exmp}
+
+\begin{exmp}
+  \begin{align*}
+    (\ln x)'|_{x = a}
+    &= \lim _{x \to a} \frac{\ln x - \ln a}{x - a} \\
+    &= \lim _{x \to a} \frac{\ln \frac{x}{a}}{x - a} \\
+    &= \lim _{x \to a} 
+      \frac{\ln \left( 1 + \frac{x}{a} - 1 \right)}{x - a} \\
+    &= \lim _{x \to a} 
+      \frac{\ln \left( 1 + \frac{x - a}{a} \right)}{\frac{x - a}{a} a} \\
+    &= \lim _{x \to a} 
+      \frac{1}{a}
+      \underbrace{
+        \frac{\ln \left( 1 + \frac{x - a}{a} \right)}{\frac{x - a}{a}}
+        }_{\to 1} \\
+    &= \frac{1}{a}
+  \end{align*}
+
+  Taigi
+  \begin{equation*}
+    (\ln x)' = \frac{1}{x}, \forall x (x \in (0; +\infty)).
+  \end{equation*}
+\end{exmp}
+
+\begin{exmp}
+  \begin{align*}
+    (e^{x})'|_{x = a} 
+    &= \lim _{x \to a} \frac{e^{x} - e^{a}}{x - a} \\
+    &= \lim _{x \to a} \frac{e^{a} (e^{x-a} - 1)}{x - a} \\
+    &= \lim _{x \to a} e^{a}
+      \underbrace{\frac{e^{x - a} - 1}{x - a}}_{\to 1} \\
+    &= e^{a}
+  \end{align*}
+
+  Taigi
+  \begin{equation*}
+    (e^{x})' = e^{x}, \forall x (x \in \RSET)
+  \end{equation*}
+\end{exmp}
+
+\begin{prop}
+  (Atvirkštinės funkcijos išvestinė) Tarkime $f$ tolydi taško $a$ 
+  aplinkoje (FIXME: Tolydumas kartais neišplaukia iš to, kad funkcija
+  yra diferencijuojama taške $a$?). $f$ yra diferencijuojama taške 
+  $a$ ir $f'(a) \neq 0$ bei taško $a$ aplinkoje egzistuoja funkcijos
+  $f$ atvirkštinė funkcija ($f^{-1}$). Tada
+  \begin{equation*}
+    (f^{-1})'(b) = \frac{1}{f'(a)}, \text{ kur } b = f(a).
+  \end{equation*}
+
+  TODO: Pataisyti.
+\end{prop}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = \sin x, \frac{-\pi}{2} \leq x \leq \frac{\pi}{2}
+  \end{equation*}
+
+  \begin{align*}
+    (\arcsin y)' 
+    &\equiv (f ^{-1})'(y) \\
+    &= \frac{1}{(\sin x)'} \\
+    &= \frac{1}{\cos x} \\
+    &= \frac{1}{\sqrt{1 - \sin^{2} x}} \\
+    &= \frac{1}{\sqrt{1 - y^{2}}}
+  \end{align*}
+
+  Išvada:
+  \begin{equation*}
+    (\arcsin x)' = \frac{1}{\sqrt{1 - x^{2}}}, \forall x (x \in (-1; 1)).
+  \end{equation*}
+\end{exmp}
+
+\section{Vidurinių reikšmių teoremos}
+
+\begin{prop}
+  (Ferma teorema) Tarkime $f$ yra diferencijuojama atvirame intervale
+  $(a; b)$ ir tame intervale egzistuoja didžiausia arba mažiausia
+  funkcijos reikšmė taške $c (c \in (a; b))$. Tada $f'(c) = 0$.
+
+  \begin{proof}
+    Tarkime $f$ taške $c$ įgyja didžiausią reikšmę. Tai yra
+    \begin{equation*}
+      f(c) \geq f(x), \forall x (x \in A).
+    \end{equation*}
+
+    Jei $x > c$, tada 
+    \begin{align}
+      f(x) - f(c) &\leq 0
+      \label{_ferma_01} \\
+      x - c &\geq 0
+      \label{_ferma_02}.
+    \end{align}
+
+    Iš \ref{_ferma_01} ir \ref{_ferma_02} nelygybės:
+    \begin{equation*}
+      \lim _{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
+    \end{equation*}
+    o iš to išplaukia, kad
+    \begin{equation}
+      f'(c^{+}) \leq 0.
+      \label{_ferma_03}
+    \end{equation}
+
+    Jei $x < c$, tada
+    \begin{align}
+      f(x) - f(c) &\leq 0
+      \label{_ferma_04} \\
+      x - c &\leq 0
+      \label{_ferma_05}.
+    \end{align}
+
+    Iš \ref{_ferma_04} ir \ref{_ferma_05} nelygybės:
+    \begin{equation*}
+      \lim _{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
+    \end{equation*}
+    o iš to išplaukia, kad
+    \begin{equation}
+      f'(c^{-}) \geq 0.
+      \label{_ferma_06}
+    \end{equation}
+
+    Iš \ref{_ferma_03} ir \ref{_ferma_06} gauname, kad $f'(c) = 0$.
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  (Rolio teorema) Tarkime $f$ yra tolydi uždarame intervale $[a; b]$
+  bei $f$ yra diferencijuojama $(a; b)$, $f(a) = f(b)$ ir 
+  $\lim _{x \to a^{+}} f(x) = f(a)$. Tada 
+  $\exists c (c \in (a; b))$, kur $f'(c) = 0$.
+
+  \begin{proof}
+    Jei $f(x) \equiv const, \forall x (x \in [a; b])$, tada 
+    $f'(x) = 0, \forall x (x \in (a; b))$. Todėl pakanka įrodyti 
+    teoremą tik tuo atveju, kai $f \not\equiv const$.
+
+    Kadangi $f$ tolydi ir $f(a) = f(b)$, tai $f$ intervale
+    $[a; b]$ įgis didžiausią arba mažiausią reikšmę. Kadangi
+    $f \not\equiv const$, tai 
+    $\exists c (c \in (a; b)) : f(c) \neq f(a) \neq f(b)$, todėl
+    didžiausią arba mažiausią reikšmę $f$ įgis intervale $(a; b)$.
+    Todėl galime pritaikyti Ferma teoremą.
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  \label{lagran_vid}
+  (Lagranžo teorema) Tarkime $f$ yra tolydi $[a; b]$ ir $f$ yra 
+  diferencijuojama $(a; b)$. Tada 
+  $\exists c (c \in (a; b)) : f(b) - f(a) = f'(c)(b - a)$.
+\end{prop}
+
+\begin{prop}
+  \label{kosi_vid}
+  (Koši teorema) Tarkime $f$ ir $g$ yra tolydžios intervale $[a;b]$ ir
+  $f, g$ yra diferencijuojamos $(a; b)$ ir $g(x) \neq 0$. Tada
+  $\exists c (c \in (a; b))$ toks, kad
+  \begin{equation*}
+    \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{f'(c)}.
+  \end{equation*}
+\end{prop}
