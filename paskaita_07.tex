@@ -1,0 +1,256 @@
+\section{Funkcijos išvestinė}
+
+\begin{note}
+  $f : A \to \RSET, A \subset \RSET, a(a \in A)$ yra vidinės aibės 
+  $A$ taškas.
+\end{note}
+
+\begin{defn}[Funkcijos išvestinė]
+  \begin{equation*}
+    f'(a) := \lim _{x \to a} \frac{f(x) - f(a)}{x - a}
+  \end{equation*}
+\end{defn}
+
+\begin{notation}
+  \begin{align*}
+    f'(a) 
+    &\equiv \frac{d f(a)}{dx} \\
+    &\equiv \left. \frac{d f(x)}{dx} \right|_{x = a} \\
+    &\equiv \left. f'(x) \right|_{x = a}.
+  \end{align*}
+\end{notation}
+
+Jei $f'(a) \in \RSET$ sakome, kad funkcija $f$ taške $a$ yra 
+diferencijuojama.
+
+\begin{exmp}
+  $f(x) = x^{2}$. Rasti $f'(x)$.
+
+  \begin{align*}
+    (x^{2})'|_{x=a} 
+    &= \lim _{x \to a} \frac{x^{2} - a^{2}}{x - a} \\
+    &= \lim _{x \to a} \frac{(x - a)(x + a)}{x - a} \\
+    &= \lim _{x \to a} (x + a)\\
+    &= 2a
+  \end{align*}
+
+  Taigi 
+  \begin{equation*}
+    (x^{2})'|_{x = a} = 2a
+  \end{equation*}
+  arba
+  \begin{equation*}
+    (x^{2})' = 2x.
+  \end{equation*}
+\end{exmp}
+
+\begin{exmp}
+  $f(x) = |x|$. Rasti $f'(0)$.
+
+  \begin{align*}
+    (|x|)'|_{x = 0} 
+    &= \lim _{x \to 0} \frac{|x| - 0}{x - 0} \\
+    &= \lim _{x \to 0} \frac{|x|}{x} \\
+    &= \lim _{x \to 0}
+    \begin{cases}
+      \frac{x}{x}, & x \geq 0 \\
+      -\frac{x}{x}, & x < 0
+    \end{cases} \\
+    &= \lim _{x \to 0}
+    \begin{cases}
+      1, & x \geq 0 \\
+      -1, & x < 0
+    \end{cases}
+  \end{align*}
+  Riba neegzistuoja $\implies$ išvestinė taške 0 neegzistuoja.
+\end{exmp}
+
+\begin{defn}[Diferencijuojama taške funkcija]
+  Funkcija $f$ vadinama diferencijuojama taške $a$, jei 
+  $\exists c (c \in \RSET)$ toks, kad 
+  \begin{equation*}
+    f(a + h) - f(a) = c \cdot h + o(h), h \to 0.
+  \end{equation*}
+  $c \cdot h$ vadinamas funkcijos $f$ diferencialo reikšme taške $a$
+  su pokyčiu $h$.
+\end{defn}
+
+\begin{defn}[Diferencijuojama taške funkcija]
+  FIXME: Palikti tik vieną apibrėžimą.
+
+  Funkcija $f(x)$ vadinama diferencijuojama taške $a (a \in A)$, jei 
+  jos pokytis tame taške $\Delta y (\Delta y = f(a + \Delta x) - f(a))$, 
+  atitinkantis jos argumento pokytį $\Delta x$, gali būti užrašomas taip:
+  \begin{equation*}
+    \Delta y = c \cdot \Delta x + \alpha (\Delta x) \cdot \Delta x,
+  \end{equation*}
+  kur $c$ – baigtinis realusis skaičius, nepriklausantis nuo $\Delta x$;
+  $\alpha(\Delta x)$ – $\Delta x$ funkcija, kuri yra be galo mažėjantis
+  dydis, kai $\Delta x \to 0$ 
+  ($\alpha(\Delta x) = o(\Delta x), \Delta x \to 0$).
+\end{defn}
+
+\begin{notation}
+  \begin{equation*}
+    d_{h} f(a) \equiv d f(a)
+  \end{equation*}
+\end{notation}
+
+\begin{defn}[Funkcijos diferencialas]
+  Funkcijos $f$ diferencialu atitinkančiu argumento pokytį $h$ vadiname
+  funkciją $x \to d_{h} f(x)$.
+\end{defn}
+
+\begin{prop}
+  Funkcija $f$ yra diferencijuojama taške $a$ tada ir tik tada, jei
+  $\exists$ baigtinė $f'(a)$. Tada $d_{h} f(a) = f'(a) \cdot h$.
+  \begin{proof}
+    \begin{description}
+      \item[Būtinumas] Tegul funkcija $f$ yra diferencijuojama taške 
+        $a$. Tada teisinga:
+        \begin{equation*}
+          \Delta y = c \cdot \Delta x + \alpha(\Delta x) \cdot \Delta x.
+        \end{equation*}
+        Abi lygybės puses padalinę iš $\Delta x (\Delta x \neq 0)$ gauname:
+        \begin{equation*}
+          \frac{\Delta y}{\Delta x} = c + \alpha(\Delta x).
+        \end{equation*}
+        Kai $\Delta x$ artėja į 0, gauname
+        \begin{align*}
+          \lim _{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+          &= \lim _{\Delta x \to 0} (c + \alpha(\Delta x))
+          &= c,
+        \end{align*}
+        o tai ir reiškia, jog taške $a$ egzistuoja funkcijos $f$ išvestinė.
+      \item[Pakankamumas] Tegul funkcija $f$ taške $a$ turi baigtinę 
+        išvestinę. Tada:
+        \begin{equation*}
+          \lim _{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(a).
+        \end{equation*}
+
+        TODO: Užbaigti įrodymą. Idėja: pažymime $c = f'(a)$ ir prie
+        dešinės pridedame $\alpha(\Delta x)$, kuri riboje nieko nekeičia,
+        nes labai greitai mažėja į 0. Tada abi lygybės puses padauginame 
+        iš $\Delta x$ ir gauname tai ko mums reikia.
+    \end{description}
+  \end{proof}
+\end{prop}
+
+\begin{notation}
+  \begin{equation*}
+    h \equiv \underbrace{dx}_{\mathclap{
+      \text{Kiek norima mažas argumento pokytis.}}}
+  \end{equation*}
+\end{notation}
+
+\begin{note}
+  \begin{equation*}
+    f'(x) dx = \frac{d f(x)}{d x} d x = d f(x)
+  \end{equation*}
+\end{note}
+
+\section{Išvestinės savybės}
+
+\begin{note}
+  FIXME: Užrašyti normaliai.
+
+  Jei $f$ yra diferencijuojama taške $a$, tai $f$ yra tolydi taške $a$:
+  \begin{align*}
+    \underbrace{f(x) - f(a)}_{x \to a} 
+      &= f'(a)\underbrace{x - a}_{\to 0} + 
+      \underbrace{o(x - a)}_{\to a}(x - a) \\
+    f(x) - f(a) &\to 0
+  \end{align*}
+  Iš to seka, jog:
+  \begin{equation*}
+    \lim _{x \to a} f(x) = f(a),
+  \end{equation*}
+  tai yra, kad $f$ – tolydi.
+\end{note}
+
+\begin{prop}
+  Jei $f$ ir $g$ yra diferencijuojamos taške $a$ bei 
+  $\alpha \in \RSET$, tai $\alpha \cdot f$, $f + g$, $f \cdot g$ ir
+  $\frac{f}{g}$ (jei $g(a) \neq 0$) yra diferencijuojamos ir teisinga:
+  \begin{enumerate}
+    \item 
+      \begin{equation*}
+        (\alpha f)' = \alpha f'
+      \end{equation*}
+    \item 
+      \begin{equation*}
+        (f + g)' = f' + g'
+      \end{equation*}
+    \item
+      \begin{equation*}
+        (f \cdot g)' = f' \cdot g + f \cdot g'
+      \end{equation*}
+    \item
+      \begin{equation*}
+        \left( \frac{f}{g} \right)' = \frac{f' \cdot g - f \cdot g'}{g^2}
+      \end{equation*}
+  \end{enumerate}
+
+  \begin{proof}
+    TODO: Įdėti visus įrodymus.
+    
+    Įrodykime, jog 
+    \begin{equation*}
+      (f \cdot g)'(a) = f'(a) \cdot g(a) + f(a) \cdot g'(a).
+    \end{equation*}
+
+    \begin{align*}
+      (f \cdot g)'(a) 
+      &= \lim _{x \to a} \frac{(f \cdot g)(x) - (f \cdot g)(a)}{x - a} 
+        & \left\{ \text{Išvestinės apibrėžimas.} \right\} \\
+      &= \lim _{x \to a} \frac{f(x)g(x) - f(a)g(a)}{x - a} \\
+      &= \lim _{x \to a} 
+        \frac{f(x)g(x) - f(x)g(a) + f(x)g(a) - f(a)g(a)}{x - a} \\
+      &= \lim _{x \to a} f(x) \cdot \frac{g(x) - g(a)}{x - a} + 
+        \lim _{x \to a} g(x) \cdot \frac{f(x) - f(a)}{x - a} \\
+      &= \lim _{x \to a} f(x) \lim _{x \to a} \frac{g(x) - g(a)}{x - a} +
+        \lim _{x \to a} g(x) \lim _{x \to a} \frac{f(x) - f(a)}{x - a} \\
+      &= f(a)g'(a) + g(a)f'(a)
+    \end{align*}
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Jei $g$ yra diferencijuojama taške $a$ ir $f$ yra diferencijuojama 
+  taške $b = g(a)$, tai
+  \begin{equation*}
+    (f \circ g)'(a) = f'(b) \cdot g'(a).
+  \end{equation*}
+
+  Analogiškas žymėjimas:
+  \begin{equation*}
+    (f \circ g)'(a) = f'(x)|_{x = g(a)} \cdot g'(x)|_{x = a}.
+  \end{equation*}
+\end{prop}
+
+\begin{exmp}
+  Raskime $\sin x^{2}$ išvestinę.
+
+  Pažymėkime
+  \begin{align*}
+    f(x) &= \sin x \\
+    g(x) &= x^{2}.
+  \end{align*}
+  Tada 
+  \begin{equation*}
+    (f \circ g)(x) = \sin x^{2}.
+  \end{equation*}
+  Dabar galime pritaikyti išvestinės skaičiavimo formulę:
+  \begin{align*}
+    g'(x) &= (x^{2})' = 2x \\
+    f'(x) &= (\sin x)' = \cos x \\
+    (f \circ g)'(a) &= (\cos x)|_{x = a^{2}} \cdot (2x)|_{x=a} 
+      = (\cos a^2)(2a).
+  \end{align*}
+
+  Taigi
+  \begin{equation*}
+    \sin x^{2} = 2x \cos x^{2}
+  \end{equation*}
+
+\end{exmp}
