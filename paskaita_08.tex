@@ -107,3 +107,69 @@
   Kadangi suskaičiavome ribą, vadinasi ji egzistuoja ir todėl mūsų
   \ref{_liopital_exmp_01} padaryta prielada yra teisinga.
 \end{exmp}
+
+\section{Aukštesnių eilių išvestinės}
+
+\begin{notation}
+  \begin{align*}
+    f'(x) &– \text{ pirmos eilės išvestinė.} \\
+    f''(x) &– \text{ antros eilės išvestinė.} \\
+    f'''(x) &– \text{ trečios eilės išvestinė.} \\
+    f^{(n)}(x) &– \text{ n-osios eilės išvestinė.}
+  \end{align*}
+\end{notation}
+
+\begin{defn}[n-osios eilės išvestinė]
+  \begin{align*}
+    f''(x) &:= (f'(x))' \\
+    f^{(n)}(x) &:= (f^{(n-1)}(x))'
+  \end{align*}
+\end{defn}
+
+\begin{defn}[n-osios eilės diferencialas]
+  n-osios eilės diferencialas atitinkantis pokytį $h$:
+  \begin{equation*}
+    d^{n}_{h} f(x) := d_{h} (d^{n-1}_{h} f(x))
+  \end{equation*}
+\end{defn}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = 
+    \begin{cases}
+      0, & x = 0 \\
+      x^{3} \sin \left( \frac{1}{x} \right), & x \neq 0
+    \end{cases}
+  \end{equation*}
+
+  \begin{align*}
+    f'(x) 
+    &= \left( x^{3} \sin \frac{1}{x} \right)' \\
+    &= 3 x^{2} \sin \frac{1}{x} +   
+      x^{3} \cos \frac{1}{x} \left( \frac{1}{-x^{2}} \right) \\
+    &= 3 x^{2} \sin \frac{1}{x} - x \cos \frac{1}{x}
+  \end{align*}
+
+  \begin{align*}
+    f'(0)
+    &= \lim _{x \to 0} \frac{f(x) - f(0)}{x - 0} \\
+    &= \lim _{x \to 0} \frac{x^{3} \sin \frac{1}{x}}{x} \\
+    &= \lim _{x \to 0} x^{2} \sin \frac{1}{x} \\
+    &= 0
+  \end{align*}
+
+  \begin{align*}
+    f''(0)
+    &= (f'(0))' \\
+    &= \lim _{x \to 0} \frac{f'(x) - \overbrace{f'(0)}^{= 0}}{x - 0} \\
+    &= \lim _{x \to 0} 
+      \frac{3 x^{2} \sin \frac{1}{x} - x \cos \frac{1}{x} - 0}{x} \\
+    &= \lim _{x \to 0} 
+      \left( 
+        \underbrace{3 x \sin \frac{1}{x}}_{\to 0} - 
+        \underbrace{\cos \frac{1}{x}}_{\mathclap{\text{neturi išvestinės}}} 
+      \right)
+  \end{align*}
+
+  Išvada: $\nexists f''(0)$.
+\end{exmp}
