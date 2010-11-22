@@ -173,3 +173,144 @@
 
   Išvada: $\nexists f''(0)$.
 \end{exmp}
+
+\section{Teiloro formulė}
+
+\begin{align*}
+  P(x) &= a_{0} + a_{1}(x - x_{0}) + a_{2}(x - x_{0})^{2} + \cdots
+    + a_{n}(x - x_{0})^{n}, & a_{n} \neq 0 \\
+  P(x_{0}) &= a_{0} \\
+  P'(x) &= a_{1} + 2a_{2}(x - x_{0}) + 3a_{3}(x - x_{0})^{2} + \cdots
+    + n a_{n}(x - x_{0})^{n-1} \\
+  P'(x_{0}) &= a_{1} \\
+  P''(x) &= 2 a_{2} + 2 \cdot 3 a_{3}(x - x_{0}) + \cdots 
+    + n(n - 1)a_{n}(x - x_{0})^{n - 2} \\
+  P''(x_{0}) &= 2 a_{2} \implies a_{2} = \frac{P''(x_{0})}{2} \\
+  P'''(x) &= 2 \cdot 3 a_{3} + 2 \cdot 3 \cdot 4 a_{4} (x - x_{0}) + \cdots
+    + n(n - 1)(n - 2)a_{n}(x - x_{0})^{n - 3} \\
+  P'''(x_{0}) &= 2 \cdot 3 \cdot a_{3} 
+    \implies a_{3} = \frac{P'''(x_{0})}{3!} \\
+  &\cdots \\
+  a_{j} &= \frac{P^{(j)}(x_{0})}{j!}
+\end{align*}
+
+\begin{equation}
+  f(x) = f(x_{0}) + a_{1}(x - x_{0}) + a_{2}(x - x_{0}) +
+    a_{3}(x - x_{0})^{2} + \cdots + a_{n} (x - x_{0})^{n} +
+    r_{n}(x), \text{ kur }
+  \label{teiloras}
+\end{equation}
+\begin{equation*}
+  a_{j} = \frac{f^{(j)}(x_{0})}{j!} 
+  \text{ ir }
+  r_{n}(x) \text{ – paklaida (arba liekamasis narys).}
+\end{equation*}
+
+\begin{prop}
+  (Teiloro formulė) Tarkime $f$ yra diferencijuojama $n + 1$ kartą
+  intervale $(a; b)$ ir $x, x_{0} \in (a; b)$. Tada
+  $\exists c (c \in (x_{0}; x) \text{ arba } c \in (x; x_{0}))$, kad
+  \begin{equation*}
+    r_{n}(x) = \frac{f^{(n+1)}(c)}{(n+1)!}(x - x_{0})^{n + 1}
+  \end{equation*}
+
+  \ref{teiloras} formulę vadiname Teiloro formule.
+
+  \begin{proof}
+
+    Pasiimkime funkciją $\varphi(t)$ tokią, kad:
+    \begin{equation*}
+      \varphi(t) = f(x) - f(t) - \frac{f'(t)}{1!}(x - t) - \cdots 
+        - \frac{f^{(n)}(t)}{n!}(x - t)^{n}.
+    \end{equation*}
+
+    $\varphi$ yra bent vieną kartą diferencijuojama pagal kintamąjį $t$,
+    nes pagal sąlygą egzistuoja $f^{(n + 1)}(t)$. Taigi 
+    (išvestinę skaičiuojame naudodami formulę
+    $(f \cdot g)' = f' \cdot g + f \cdot g'$):
+    \begin{align*}
+      \varphi'_{t} (t) 
+      &= 0 - f'(t) - 
+      \left( \frac{f''(t)}{1!}(x - t) + \frac{f'(t)}{1!}(-1) \right) 
+      - \cdots - 
+      \left( \frac{f^{(n+1)}(t)}{n!}(x - t)^{n} + 
+        \frac{f^{(n)}(t)}{n!}(x - t)^{n - 1}(-1) \right) \\
+% FIXME Sutvarkyti lygiavimą!
+      &= - f'(t) - f''(t)(x - t) + f'(t) - \cdots - 
+        \frac{f^{(n + 1)}(t)}{n!}(x - t)^{n} + 
+        \frac{f^{(n)}(t)}{n!}(x - t)^{n - 1} \\
+      &= - \frac{f^{(n + 1)}(t)}{n!}(x - t)^{n}
+    \end{align*}
+
+    Paimkime naują funkciją $g$, kuri yra bent vieną kartą 
+    diferencijuojama. $\varphi$ ir $g$ tenkina Koši vidutinių 
+    reikšmių teoremą. Iš to seka, kad:
+    \begin{equation}
+      \exists c (c \in (x; x_{0}) \text{ arba } c \in (x_{0}; x)) :
+      \frac{\varphi(x) - \varphi(x_{0})}{g(x) - g(x_{0})} = 
+      \frac{\varphi'(c)}{g'(c)}.
+      \label{_teiloras_01}
+    \end{equation}
+
+    Apskaičiuokime reikiamas $\varphi$ funkcijos reikšmes:
+    \begin{align*}
+      \varphi(x_{0}) &= r_{n}(x) \\
+      \varphi(x) &= 0 \\
+      \varphi'(t) &= - \frac{f^{(n + 1)}(t)}{n!}(x - t)^{n}
+    \end{align*}
+
+    Pasirinkime $g(t) = (x - t)^{n + 1}$ (Pastaba: Pasirinkus kitokią 
+    funkciją, gaunama kitokia liekamojo nario forma.) ir apskaičiuokime
+    mums reikiamas $g$ funkcijos reikšmes:
+    \begin{align*}
+      g(x) &= 0 \\
+      g(x_{0}) &= (x - x_{0})^{n + 1} \\
+      g'_{t}(t) &= - (n + 1)(x - t)^{n}.
+    \end{align*}
+
+    Dabar $\varphi$ ir $g$ reikšmes įrašome į (\ref{_teiloras_01}):
+    \begin{align*}
+      \frac{0 - r_{n}(x)}{-(x - x_{0})^{n + 1}} 
+      &= \frac{- \frac{f^{(n + 1)}(c)}{n!}(x - c)^{n}}
+        {-(n + 1)(x - c)^{n}} \\
+        r_{n}(x) &= \frac{f^{(n + 1)}(c)}{(n + 1)!}(x - x_{0})^{n + 1}.
+    \end{align*}
+
+    Gavome Lagranžo formos liekamojo nario išraišką.
+
+  \end{proof}
+
+\end{prop}
+
+\begin{prop}
+  Jei $f$ yra n-kartų diferencijuojama taško $x_{0}$ aplinkoje ir
+  $f^{(n)}$ yra tolydi taško $x_{0}$ aplinkoje, tai
+  \begin{equation*}
+    r_{n} (x) = o((x - x_{0})^{n}), \text{ kai } x \to x_{0}.
+  \end{equation*}
+\end{prop}
+
+\begin{exmp}
+  \begin{equation*}
+    f(x) = e^{x}, x_{0} = 0
+  \end{equation*}
+
+  \begin{align*}
+    f^{(n)}(x) &= e^{x} \\
+    f^{(n)}(0) &= 1 \\
+    f(x) &= 1 + \frac{1}{1!}x^{1} + \frac{1}{2!}x^{2} + 
+      \frac{1}{3!}x^{3} + \cdots + \frac{1}{n!}x^{n} + r_{n}(x).
+  \end{align*}
+
+  Iš Teiloro formulės:
+  \begin{equation*}
+    \exists c (c \in (x_{0}; x)) : r_{n}(x) = 
+      \frac{e^{c}}{(n + 1)}x^{n + 1}
+  \end{equation*}
+
+  Tarkime $f$ nagrinėjame $|x| \leq 1$. Kokia paklaida?
+
+  \begin{equation*}
+    |r_{n}(x)| \leq \frac{e^{1}}{(n + 1)!}1 = \frac{e}{(n + 1)!}
+  \end{equation*}
+\end{exmp}
