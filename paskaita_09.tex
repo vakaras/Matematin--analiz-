@@ -1,1 +1,46 @@
 \section{Lokalūs ekstremumai}
+
+\begin{defn}[Funkcijos lokalus maksimumas]
+  Taškas $a$ vadinamas lokaliu maksimumu, jei
+  \begin{equation*}
+    \exists U_{a} : f(x) \leq f(a), \forall x (x \in U_{a} \cap A).
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Funkcijos lokalus minimumas]
+  Taškas $a$ vadinamas lokaliu minimumu, jei
+  \begin{equation*}
+    \exists U_{a} : f(x) \geq f(a), \forall x (x \in U_{a} \cap A)
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Funkcijos maksimumas]
+  Taškas $a$ vadinamas funkcijos maksimumo tašku, jei 
+  $f(x) \leq f(a), \forall x (x \in A)$.
+\end{defn}
+
+\begin{defn}[Funkcijos minimumas]
+  Taškas $a$ vadinamas funkcijos minimumo tašku, jei
+  $f(x) \geq f(a), \forall x (x \in A)$.
+\end{defn}
+
+\begin{prop}
+  Jei funkcija $f$ yra diferencijuojama, tai taškas $a$ yra jos
+  lokalus ekstremumas tada ir tik tada, kai funkcijos $f$ išvestinė
+  tame taške keičia ženklą.
+
+  FiXME: Performuluoti.
+  \begin{proof}
+    TODO: Įrodyti. (Būtinumą galima iš Ferma teoremos.)
+  \end{proof}
+\end{prop}
+
+Lokalių ekstremumų paieškos schema ($f : A \to \RSET$):
+\begin{enumerate}
+  \item Skaidome $A$ į dvi taškų aibes: $A'$ ir $A''$, kur
+    $A' \cup A'' = A$ ir $A' \cap \A'' = \emptyset$.
+    $A'$ – taškai, kur $f$ yra diferencijuojama, o 
+    $A''$ – taškai, kur $f$ nėra diferencijuojama.
+  \item $A''$ aibės taškus analizuojame pagal apibrėžimą, o 
+    $A'$ aibės taškus naudodami išvestinę.
+\end{enumerate}
