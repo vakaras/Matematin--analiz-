@@ -1,0 +1,154 @@
+\section{Funkcijų iškilumas}
+
+\begin{defn}[Funkcijos grafikas]
+  \begin{equation*}
+    G(f) := \left\{ (x; f(x)) : x \in A \right\}.
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Taškas yra žemiau]
+  Taškas $(x; y)$ yra žemiau taško $(x; Y)$, jei $y \leq Y$.
+\end{defn}
+
+\begin{defn}[Iškila funkcija]
+  Funkcija $f$ vadinama iškila (į apačią) intervale $(a; b)$, jei
+  $\forall x_{1}, x_{2} (x_{1},x_{2} \in (a; b))$ funkcijos grafiko
+  taškai $\left\{ (x; f(x)) : x_{1} \leq x \leq x_{2} \right\}$
+  yra žemiau funkcijos $f$ stygos, kuri jungia funkcijos 
+  grafiko taškus $(x_{1}; f(x_{1}))$ ir $(x_{2}; f(x_{2}))$.
+
+  Fiksuojame $x$ ir $y \leq Y$, kur $y$ yra funkcijos $f$ reikšmė 
+  taške $x$, o $Y$ yra stygos reikšmė taške $x$. Tada:
+
+  \begin{equation*}
+    f(x) \leq 
+      \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}(x - x_{1}) + f(x_{1})
+  \end{equation*}
+\end{defn}
+
+\begin{exmp}
+  Iškilos (į apačią) funkcijos grafiko pavyzdys: TODO: $f(x) = x^{2}$.
+\end{exmp}
+
+\begin{defn}[Iškila funkcija]
+  Funkcija $f$ yra iškila intervale $(a; b)$, jei
+  $\forall x, x_{1}, x_{2} (x, x_{1}, x_{2} \in (a; b)$ ir
+  $x_{1} < x < x_{2})$ teisinga nelygybė:
+  \begin{equation*}
+    \frac{f(x) - f(x_{1})}{x - x_{1}} 
+    \leq \frac{f(x_{2}) - f(x_{1})}{x_{2} - x_{1}}
+  \end{equation*}
+\end{defn}
+
+\begin{defn}[Iškilos funkcijos kriterijus]
+  Iškilos į apačią funkcijos kriterijus:
+  \begin{equation*}
+    \frac{f(x) - f(x_{1})}{x - x_{1}} 
+    \leq \frac{f(x_{2} - f(x))}{x_{2} - x},
+  \end{equation*}
+  kur $x_{1} < x < x_{2}$.
+\end{defn}
+
+\begin{defn}[Įgaubtos funkcijos kriterijus]
+  Įgaubtos (iškilos į viršų) funkcijos kriterijus:
+  \begin{equation*}
+    \frac{f(x) - f(x_{1})}{x - x_{1}}
+    \leq \frac{f(x_{2}) - f(x)}{x_{2} - x},
+  \end{equation*}
+  kur $x_{1} < x < x_{2}$.
+\end{defn}
+
+\begin{exmp}
+  Įgaubtos (iškilos į apačią) funkcijos grafiko pavyzdys: 
+  TODO: $f(x) = -x^{2}$.
+\end{exmp}
+
+\begin{prop}
+  Iškila funkcija yra tolydi.
+\end{prop}
+
+\begin{prop}
+  TODO: Sutvarkyti.
+
+  Tarkime, $f$ yra diferencijuojama intervale $(a; b)$. Tada $f$ yra
+  iškyla intervale $(a; b)$ tada ir tik tada, kai $f'$ – didėja.
+
+  \begin{proof}
+    TODO.
+  \end{proof}
+\end{prop}
+
+\begin{prop}
+  Tarkime $f$ yra diferencijuojama du kartus.
+
+  Jei $f'' \geq 0$, tai $f$ yra iškila.
+  Jei $f'' \leq 0$, tai $f$ yra įgaubta.
+\end{prop}
+
+\begin{defn}[Vingio taškas]
+  Taškas $x \in (a; b)$ vadinamas vingio tašku, jei jame keičiasi funkcijos
+  iškilumas.
+\end{defn}
+
+\begin{prop}
+  Jei $f$ yra diferencijuojama du kartus taške $c$, tai 
+  $f''(c) = 0$ yra būtina vingio taško sąlyga.
+\end{prop}
+
+\begin{prop}
+  Tarkime $f$ yra du kartus diferencijuojama. Taškas $c$ yra vingio
+  taškas tada ir tik tada, kai $c$ keičiasi $f''$ ženklas.
+\end{prop}
+
+\section{Asimptotės}
+
+\begin{defn}[Vertikali asimptotė]
+  Tiesė $x = x_{0}$ yra funkcijos $f$ vertikali asimptotė, jei 
+  \begin{equation*}
+    \lim _{x \to x_{0}^{+}} f(x) = \infty \text{ arba }
+    \lim _{x \to x_{0}^{-}} f(x) = \infty.
+  \end{equation*}
+
+  TODO: Pavyzdį su brėžiniu.
+\end{defn}
+
+\begin{defn}[Nevertikali asimptotė]
+  Tiesę $y = ax + b$ vadiname nevertikalia asimptote, tada ir tik tada, kai
+  \begin{equation*}
+    \lim _{x \to +\infty} (f(x) - (ax + b)) = 0 \text{ arba }
+    \lim _{x \to -\infty} (f(x) - (ax + b)) = 0
+  \end{equation*}
+
+  \begin{note}
+    Funkcija gali turėti ne daugiau, nei dvi nevertikalias asimptotes. 
+    Vieną, kai $x \to +\infty$ ir kitą, kai $x \to -\infty$.
+  \end{note}
+
+  \begin{note}
+    Koeficientų $a$ ir $b$ radimo metodika, kai $x \to +\infty$:
+    \begin{equation*}
+      \lim _{x \to +\infty} \left( \frac{f(x)}{x} - a - 
+        \left( \underbrace{\frac{b}{x}}_{\to 0} \right) \right) = 0
+        \implies a = \lim _{x \to +\infty} \left( \frac{f(x)}{x} \right))
+    \end{equation*}
+    \begin{equation*}
+      b = \lim_{x \to +\infty} (f(x) - ax)
+    \end{equation*}
+  \end{note}
+\end{defn}
+
+\section{Funkcijos tyrimas}
+
+Atliekant funkcijos tyrimą atliekami tokie žingsniai:
+\begin{enumerate}
+  \item Nustatomi taškai, kur funkcija kerta $x$ ir $y$ ašis. Patikrinama
+    ar funkcija yra periodinė, lyginė, nelyginė.
+  \item Ištiriami ypatingieji taškai: $-\infty, +\infty$, trūkio taškai.
+    Nustatomos trūkio taškų rūšys.
+  \item Ištiriamas funkcijos monotoniškumas: surandami didėjimo, mažėjimo
+    intervalai bei lokalūs ekstremumai.
+  \item Surandami intervalai, kur funkcija yra iškila, įgaubta bei jos
+    vingio taškai.
+  \item Surandamos funkcijos asimptotės.
+  \item Nubraižomas funkcijos grafikas.
+\end{enumerate}
