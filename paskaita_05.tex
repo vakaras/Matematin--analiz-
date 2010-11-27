@@ -106,9 +106,12 @@
   \end{equation*}
 
   Dabar galime įvertinti $|\sin x|$:
-  \begin{equation*}
-    |x|(1 - |x|) \leq |\sin x| \leq |x|.
-  \end{equation*}
+  \begin{align*}
+    \cos |x| &\leq \frac{\sin |x|}{|x|}  \\
+    1 - |x| &\leq \frac{\sin |x|}{|x|} \\
+    |x|(1 - |x|) &\leq |\sin x| \\
+    |x|(1 - |x|) &\leq |\sin x| \leq |x|.
+  \end{align*}
 
   Taigi $\left| \frac{3x}{\sin x} \right|$ galime įvertinti:
   \begin{equation*}
@@ -212,7 +215,7 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
       taškas a yra vadinamas 1 rūšies trūkiu.
     \item[pataisomas trūkis] Jei
       \begin{equation*}
-        \lim _{x \to a^{-}} f(x) = \lim _{x \to a^{-}} f(x) 
+        \lim _{x \to a^{-}} f(x) = \lim _{x \to a^{+}} f(x) 
         \implies \exists \lim _{x \to a} f(x)
       \end{equation*}
       yra baigtinė, tai taškas $a$ vadinamas pataisomu trūkio tašku.

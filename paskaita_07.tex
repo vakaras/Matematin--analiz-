@@ -323,15 +323,12 @@ Sąrašą žr. \ref{dx_formulynas}.
 
 \begin{prop}
   (Atvirkštinės funkcijos išvestinė) Tarkime $f$ tolydi taško $a$ 
-  aplinkoje (FIXME: Tolydumas kartais neišplaukia iš to, kad funkcija
-  yra diferencijuojama taške $a$?). $f$ yra diferencijuojama taške 
-  $a$ ir $f'(a) \neq 0$ bei taško $a$ aplinkoje egzistuoja funkcijos
+  aplinkoje, $f$ yra diferencijuojama taške $a$ ir $f'(a) \neq 0$ 
+  bei taško $a$ aplinkoje egzistuoja funkcijos
   $f$ atvirkštinė funkcija ($f^{-1}$). Tada
   \begin{equation*}
     (f^{-1})'(b) = \frac{1}{f'(a)}, \text{ kur } b = f(a).
   \end{equation*}
-
-  TODO: Pataisyti.
 \end{prop}
 
 \begin{exmp}
@@ -437,9 +434,9 @@ Sąrašą žr. \ref{dx_formulynas}.
 \begin{prop}
   \label{kosi_vid}
   (Koši teorema) Tarkime $f$ ir $g$ yra tolydžios intervale $[a;b]$ ir
-  $f, g$ yra diferencijuojamos $(a; b)$ ir $g(x) \neq 0$. Tada
-  $\exists c (c \in (a; b))$ toks, kad
+  $f, g$ yra diferencijuojamos $(a; b)$ ir $g'(x) \neq 0$ visiems 
+  $x (x \in (a; b))$. Tada $\exists c (c \in (a; b))$ toks, kad
   \begin{equation*}
-    \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{f'(c)}.
+    \frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}.
   \end{equation*}
 \end{prop}
