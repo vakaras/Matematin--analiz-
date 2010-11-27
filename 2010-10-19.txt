@@ -17,7 +17,7 @@ Jei $f'(a) \in \SETR$ sakome, kad funkcija f taške a yra diferencijuojama.
   $t$ – laikas, $s(t)$ – per $t$ laiko nueitas kelias
   $s(t) - s(t_0)$ – per $t - t_0$ laiko nueitas kelias
   $v_vid = \frac{s(t) - s(t_0)}{t - t_0}$
-  v_{t_0} = \lim_{t \to t_0}{\frac{s(t) - s(t_0)}{t - t_0}} = s'(t_0)
+  $v_{t_0} = \lim_{t \to t_0}{\frac{s(t) - s(t_0)}{t - t_0}} = s'(t_0)$
 \end{exmp}
 
 Geometrinė samprata
