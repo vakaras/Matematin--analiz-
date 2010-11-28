@@ -33,7 +33,7 @@
 
         Kai $x \to x_{0}$, tai 
         \begin{equation}
-          \lim _{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}}
+          \lim_{x \to x_{0}} \frac{f(x) - f(x_{0})}{x - x_{0}}
           \underbrace{\geq}_{
             \mathclap{\text{Seka iš \ref{_monot_01} ir \ref{_monot_02}}}}
           0
@@ -73,7 +73,7 @@
 \begin{prop}
   (Liopitalio taisyklė) Tarkime, jog išpildytos šios salygos:
   \begin{enumerate}
-    \item $\exists \lim _{x \to a} \frac{f'(x)}{g'(x)}$
+    \item $\exists \lim_{x \to a} \frac{f'(x)}{g'(x)}$
     \item $f(a^{+}) = g(a^{+}) = 0$ arba 
       $g(a^{+}) = f(a^{+}) = \pm \infty$.
     \item $g'(x) \neq 0, \forall x (x \in A)$.
@@ -81,8 +81,8 @@
 
   Tada teisinga:
   \begin{equation*}
-    \lim _{x \to a^{+}} \frac{f(x)}{g(x)} = 
-    \lim _{x \to a^{+}} \frac{f'(x)}{g'(x)}.
+    \lim_{x \to a^{+}} \frac{f(x)}{g(x)} = 
+    \lim_{x \to a^{+}} \frac{f'(x)}{g'(x)}.
   \end{equation*}
 \end{prop}
 
@@ -93,13 +93,13 @@
 
 \begin{exmp}
   \begin{align}
-    \lim _{x \to +\infty} \frac{\ln x}{x}
+    \lim_{x \to +\infty} \frac{\ln x}{x}
     &\underbrace{=}_{\mathclap{
       \text{Darome prielaidą, jog pirma Liopitalio taisyklės 
       prielaida yra tenkinama.}}}
-    \lim _{x \to +\infty} \frac{(\ln x)'}{(x)'}
+    \lim_{x \to +\infty} \frac{(\ln x)'}{(x)'}
     \label{_liopital_exmp_01} \\
-    &= \lim _{x \to +\infty} \frac{\frac{1}{x}}{1} \\
+    &= \lim_{x \to +\infty} \frac{\frac{1}{x}}{1} \\
     &= 0
     \label{_liopital_exmp_02}
   \end{align}
@@ -152,19 +152,19 @@
 
   \begin{align*}
     f'(0)
-    &= \lim _{x \to 0} \frac{f(x) - f(0)}{x - 0} \\
-    &= \lim _{x \to 0} \frac{x^{3} \sin \frac{1}{x}}{x} \\
-    &= \lim _{x \to 0} x^{2} \sin \frac{1}{x} \\
+    &= \lim_{x \to 0} \frac{f(x) - f(0)}{x - 0} \\
+    &= \lim_{x \to 0} \frac{x^{3} \sin \frac{1}{x}}{x} \\
+    &= \lim_{x \to 0} x^{2} \sin \frac{1}{x} \\
     &= 0
   \end{align*}
 
   \begin{align*}
     f''(0)
     &= (f'(0))' \\
-    &= \lim _{x \to 0} \frac{f'(x) - \overbrace{f'(0)}^{= 0}}{x - 0} \\
-    &= \lim _{x \to 0} 
+    &= \lim_{x \to 0} \frac{f'(x) - \overbrace{f'(0)}^{= 0}}{x - 0} \\
+    &= \lim_{x \to 0} 
       \frac{3 x^{2} \sin \frac{1}{x} - x \cos \frac{1}{x} - 0}{x} \\
-    &= \lim _{x \to 0} 
+    &= \lim_{x \to 0} 
       \left( 
         \underbrace{3 x \sin \frac{1}{x}}_{\to 0} - 
         \underbrace{\cos \frac{1}{x}}_{\mathclap{\text{neturi išvestinės}}} 

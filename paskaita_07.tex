@@ -7,7 +7,7 @@
 
 \begin{defn}[Funkcijos išvestinė]
   \begin{equation*}
-    f'(a) := \lim _{x \to a} \frac{f(x) - f(a)}{x - a}
+    f'(a) := \lim_{x \to a} \frac{f(x) - f(a)}{x - a}
   \end{equation*}
 \end{defn}
 
@@ -28,9 +28,9 @@ diferencijuojama.
 
   \begin{align*}
     (x^{2})'|_{x=a} 
-    &= \lim _{x \to a} \frac{x^{2} - a^{2}}{x - a} \\
-    &= \lim _{x \to a} \frac{(x - a)(x + a)}{x - a} \\
-    &= \lim _{x \to a} (x + a)\\
+    &= \lim_{x \to a} \frac{x^{2} - a^{2}}{x - a} \\
+    &= \lim_{x \to a} \frac{(x - a)(x + a)}{x - a} \\
+    &= \lim_{x \to a} (x + a)\\
     &= 2a
   \end{align*}
 
@@ -49,14 +49,14 @@ diferencijuojama.
 
   \begin{align*}
     (|x|)'|_{x = 0} 
-    &= \lim _{x \to 0} \frac{|x| - 0}{x - 0} \\
-    &= \lim _{x \to 0} \frac{|x|}{x} \\
-    &= \lim _{x \to 0}
+    &= \lim_{x \to 0} \frac{|x| - 0}{x - 0} \\
+    &= \lim_{x \to 0} \frac{|x|}{x} \\
+    &= \lim_{x \to 0}
     \begin{cases}
       \frac{x}{x}, & x \geq 0 \\
       -\frac{x}{x}, & x < 0
     \end{cases} \\
-    &= \lim _{x \to 0}
+    &= \lim_{x \to 0}
     \begin{cases}
       1, & x \geq 0 \\
       -1, & x < 0
@@ -117,15 +117,15 @@ diferencijuojama.
         \end{equation*}
         Kai $\Delta x$ artėja į 0, gauname
         \begin{align*}
-          \lim _{\Delta x \to 0} \frac{\Delta y}{\Delta x}
-          &= \lim _{\Delta x \to 0} (c + \alpha(\Delta x))
+          \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}
+          &= \lim_{\Delta x \to 0} (c + \alpha(\Delta x))
           &= c,
         \end{align*}
         o tai ir reiškia, jog taške $a$ egzistuoja funkcijos $f$ išvestinė.
       \item[Pakankamumas] Tegul funkcija $f$ taške $a$ turi baigtinę 
         išvestinę. Tada:
         \begin{equation*}
-          \lim _{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(a).
+          \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} = f'(a).
         \end{equation*}
 
         TODO: Užbaigti įrodymą. Idėja: pažymime $c = f'(a)$ ir prie
@@ -163,7 +163,7 @@ diferencijuojama.
   \end{align*}
   Iš to seka, jog:
   \begin{equation*}
-    \lim _{x \to a} f(x) = f(a),
+    \lim_{x \to a} f(x) = f(a),
   \end{equation*}
   tai yra, kad $f$ – tolydi.
 \end{note}
@@ -201,15 +201,15 @@ diferencijuojama.
 
     \begin{align*}
       (f \cdot g)'(a) 
-      &= \lim _{x \to a} \frac{(f \cdot g)(x) - (f \cdot g)(a)}{x - a} 
+      &= \lim_{x \to a} \frac{(f \cdot g)(x) - (f \cdot g)(a)}{x - a} 
         & \left\{ \text{Išvestinės apibrėžimas.} \right\} \\
-      &= \lim _{x \to a} \frac{f(x)g(x) - f(a)g(a)}{x - a} \\
-      &= \lim _{x \to a} 
+      &= \lim_{x \to a} \frac{f(x)g(x) - f(a)g(a)}{x - a} \\
+      &= \lim_{x \to a} 
         \frac{f(x)g(x) - f(x)g(a) + f(x)g(a) - f(a)g(a)}{x - a} \\
-      &= \lim _{x \to a} f(x) \cdot \frac{g(x) - g(a)}{x - a} + 
-        \lim _{x \to a} g(x) \cdot \frac{f(x) - f(a)}{x - a} \\
-      &= \lim _{x \to a} f(x) \lim _{x \to a} \frac{g(x) - g(a)}{x - a} +
-        \lim _{x \to a} g(x) \lim _{x \to a} \frac{f(x) - f(a)}{x - a} \\
+      &= \lim_{x \to a} f(x) \cdot \frac{g(x) - g(a)}{x - a} + 
+        \lim_{x \to a} g(x) \cdot \frac{f(x) - f(a)}{x - a} \\
+      &= \lim_{x \to a} f(x) \lim_{x \to a} \frac{g(x) - g(a)}{x - a} +
+        \lim_{x \to a} g(x) \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \\
       &= f(a)g'(a) + g(a)f'(a)
     \end{align*}
   \end{proof}
@@ -262,17 +262,17 @@ Sąrašą žr. \ref{dx_formulynas}.
 \begin{exmp}
   \begin{align*}
     (\sin x)'|_{x=a}
-    &= \lim _{x \to a} \frac{\sin x - \sin a}{x - a} \\
-    &= \lim _{x \to a} \frac{
+    &= \lim_{x \to a} \frac{\sin x - \sin a}{x - a} \\
+    &= \lim_{x \to a} \frac{
       2 \sin \left( \frac{x - a}{2} \right) 
       \cos \left( \frac{x + a}{2} \right)
       }{x - a} \\
-    &= \lim _{x \to a} 
+    &= \lim_{x \to a} 
       \underbrace{
         \frac{\sin \left( \frac{x - a}{2} \right)}{\frac{x - a}{2}}
       }_{\to 1}
       \frac{2 \cos \left( \frac{x + a}{2} \right)}{2} \\
-      &= \lim _{x \to a} \cos \frac{x + a}{2} \\
+      &= \lim_{x \to a} \cos \frac{x + a}{2} \\
       &= \cos a
   \end{align*}
 
@@ -285,13 +285,13 @@ Sąrašą žr. \ref{dx_formulynas}.
 \begin{exmp}
   \begin{align*}
     (\ln x)'|_{x = a}
-    &= \lim _{x \to a} \frac{\ln x - \ln a}{x - a} \\
-    &= \lim _{x \to a} \frac{\ln \frac{x}{a}}{x - a} \\
-    &= \lim _{x \to a} 
+    &= \lim_{x \to a} \frac{\ln x - \ln a}{x - a} \\
+    &= \lim_{x \to a} \frac{\ln \frac{x}{a}}{x - a} \\
+    &= \lim_{x \to a} 
       \frac{\ln \left( 1 + \frac{x}{a} - 1 \right)}{x - a} \\
-    &= \lim _{x \to a} 
+    &= \lim_{x \to a} 
       \frac{\ln \left( 1 + \frac{x - a}{a} \right)}{\frac{x - a}{a} a} \\
-    &= \lim _{x \to a} 
+    &= \lim_{x \to a} 
       \frac{1}{a}
       \underbrace{
         \frac{\ln \left( 1 + \frac{x - a}{a} \right)}{\frac{x - a}{a}}
@@ -308,9 +308,9 @@ Sąrašą žr. \ref{dx_formulynas}.
 \begin{exmp}
   \begin{align*}
     (e^{x})'|_{x = a} 
-    &= \lim _{x \to a} \frac{e^{x} - e^{a}}{x - a} \\
-    &= \lim _{x \to a} \frac{e^{a} (e^{x-a} - 1)}{x - a} \\
-    &= \lim _{x \to a} e^{a}
+    &= \lim_{x \to a} \frac{e^{x} - e^{a}}{x - a} \\
+    &= \lim_{x \to a} \frac{e^{a} (e^{x-a} - 1)}{x - a} \\
+    &= \lim_{x \to a} e^{a}
       \underbrace{\frac{e^{x - a} - 1}{x - a}}_{\to 1} \\
     &= e^{a}
   \end{align*}
@@ -374,7 +374,7 @@ Sąrašą žr. \ref{dx_formulynas}.
 
     Iš \ref{_ferma_01} ir \ref{_ferma_02} nelygybės:
     \begin{equation*}
-      \lim _{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
+      \lim_{x \to c^{+}} \frac{f(x) - f(c)}{x - c} \leq 0,
     \end{equation*}
     o iš to išplaukia, kad
     \begin{equation}
@@ -392,7 +392,7 @@ Sąrašą žr. \ref{dx_formulynas}.
 
     Iš \ref{_ferma_04} ir \ref{_ferma_05} nelygybės:
     \begin{equation*}
-      \lim _{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
+      \lim_{x \to c^{-}} \frac{f(x) - f(c)}{x - c} \geq 0,
     \end{equation*}
     o iš to išplaukia, kad
     \begin{equation}
@@ -407,7 +407,7 @@ Sąrašą žr. \ref{dx_formulynas}.
 \begin{prop}
   (Rolio teorema) Tarkime $f$ yra tolydi uždarame intervale $[a; b]$
   bei $f$ yra diferencijuojama $(a; b)$, $f(a) = f(b)$ ir 
-  $\lim _{x \to a^{+}} f(x) = f(a)$. Tada 
+  $\lim_{x \to a^{+}} f(x) = f(a)$. Tada 
   $\exists c (c \in (a; b))$, kur $f'(c) = 0$.
 
   \begin{proof}
