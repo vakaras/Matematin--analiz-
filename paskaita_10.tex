@@ -6,15 +6,15 @@
   \end{equation*}
 \end{defn}
 
-\begin{defn}[Taškas yra žemiau]
-  Taškas $(x; y)$ yra žemiau taško $(x; Y)$, jei $y \leq Y$.
+\begin{defn}[Taškas yra ne aukščiau]
+  Taškas $(x; y)$ yra ne aukščiau taško $(x; Y)$, jei $y \leq Y$.
 \end{defn}
 
 \begin{defn}[Iškila funkcija]
   Funkcija $f$ vadinama iškila (į apačią) intervale $(a; b)$, jei
   $\forall x_{1}, x_{2} (x_{1},x_{2} \in (a; b))$ funkcijos grafiko
-  taškai $\left\{ (x; f(x)) : x_{1} \leq x \leq x_{2} \right\}$
-  yra žemiau funkcijos $f$ stygos, kuri jungia funkcijos 
+  taškai $\left\{ (x; f(x)) : x_{1} < x < x_{2} \right\}$
+  yra ne aukščiau funkcijos $f$ stygos, kuri jungia funkcijos 
   grafiko taškus $(x_{1}; f(x_{1}))$ ir $(x_{2}; f(x_{2}))$.
 
   Fiksuojame $x$ ir $y \leq Y$, kur $y$ yra funkcijos $f$ reikšmė 
@@ -44,7 +44,7 @@
   Iškilos į apačią funkcijos kriterijus:
   \begin{equation*}
     \frac{f(x) - f(x_{1})}{x - x_{1}} 
-    \leq \frac{f(x_{2} - f(x))}{x_{2} - x},
+    \leq \frac{f(x_{2}) - f(x)}{x_{2} - x},
   \end{equation*}
   kur $x_{1} < x < x_{2}$.
 \end{defn}
@@ -53,7 +53,7 @@
   Įgaubtos (iškilos į viršų) funkcijos kriterijus:
   \begin{equation*}
     \frac{f(x) - f(x_{1})}{x - x_{1}}
-    \leq \frac{f(x_{2}) - f(x)}{x_{2} - x},
+    \geq \frac{f(x_{2}) - f(x)}{x_{2} - x},
   \end{equation*}
   kur $x_{1} < x < x_{2}$.
 \end{defn}
