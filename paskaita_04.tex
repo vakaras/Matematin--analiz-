@@ -18,17 +18,17 @@
   \begin{proof}
     \hfill \\
     \begin{description}
-      \item[Būtinumas] Tarkime, jog $\exists \lim _{x \to a} f(x)$ ir ji
+      \item[Būtinumas] Tarkime, jog $\exists \lim_{x \to a} f(x)$ ir ji
         yra baigtinė. Reikia įrodyti \ref{kosi} teiginį.
 
         Pažymėkime:
         \begin{equation*}
-          \lim _{x \to a} f(x) = b.
+          \lim_{x \to a} f(x) = b.
         \end{equation*}
 
         Tada pagal funkcijos ribos apibrėžimą (\ref{limfed}):
         \begin{equation*}
-          \lim _{x \to a} f(x) = b \iff 
+          \lim_{x \to a} f(x) = b \iff 
           \forall \varepsilon (\varepsilon > 0), \exists U_{a}:
           | f(x) - b | < \varepsilon, 
           \forall x (x \in U_{a} \cap A \setminus \{a\}).
@@ -44,7 +44,7 @@
         \end{align*}
 
       \item[Pakankamumas] Tarkime, kad \ref{kosi} sąlyga teisinga. Reikia 
-        įrodyti, kad $\exists \lim _{x \to a} f(x)$ ir kad ji yra baigtinė.
+        įrodyti, kad $\exists \lim_{x \to a} f(x)$ ir kad ji yra baigtinė.
 
         Kadangi \ref{kosi} teisinga, tai:
         \begin{equation}
@@ -105,7 +105,7 @@
   \label{lim_sinx_x}
   Įrodysime, kad:
   \begin{equation*}
-    \lim _{x \to 0} \frac{\sin x}{x} = 1
+    \lim_{x \to 0} \frac{\sin x}{x} = 1
   \end{equation*}
 
   \begin{proof}
@@ -199,24 +199,24 @@
 
     Pagal trijų girtuoklių teoremą, kadangi:
     \begin{align*}
-      \lim _{x \to 0^{+}} 0 &= 0 &\text{ ir } \\
-      \lim _{x \to 0^{+}} \frac{x^2}{2} &= 0 &\text{ tai ir } \\
-      \lim _{x \to 0^{+}} \left( 1 - \frac{\sin x}{x} \right) &= 0, 
+      \lim_{x \to 0^{+}} 0 &= 0 &\text{ ir } \\
+      \lim_{x \to 0^{+}} \frac{x^2}{2} &= 0 &\text{ tai ir } \\
+      \lim_{x \to 0^{+}} \left( 1 - \frac{\sin x}{x} \right) &= 0, 
         &\text{o tai reiškia, kad} \\
-      \lim _{x \to 0^{+}} \frac{\sin x}{x} &= 1.
+      \lim_{x \to 0^{+}} \frac{\sin x}{x} &= 1.
     \end{align*}
 
     Pažymėję $y = -x$, gauname:
     \begin{align*}
-      \lim _{x \to 0^{-}} \frac{\sin x}{x} &=
-      \lim _{x \to 0^{-}} \frac{-\sin x}{-x} \\
-      &= \lim _{x \to 0^{-}} \frac{\sin(-x)}{-x} \\
-      &= \lim _{y \to 0^{+}} \frac{\sin y}{y} = 1
+      \lim_{x \to 0^{-}} \frac{\sin x}{x} &=
+      \lim_{x \to 0^{-}} \frac{-\sin x}{-x} \\
+      &= \lim_{x \to 0^{-}} \frac{\sin(-x)}{-x} \\
+      &= \lim_{y \to 0^{+}} \frac{\sin y}{y} = 1
     \end{align*}
 
     Kadangi egzistuoja riba iš dešinės ir iš kairės, ir jos sutampa, tai
     \begin{equation*}
-      \lim _{x \to 0} \frac{\sin x}{x} = 1
+      \lim_{x \to 0} \frac{\sin x}{x} = 1
     \end{equation*}
 
   \end{proof}
@@ -226,7 +226,7 @@
 \begin{exmp}
   Įrodysime, kad:
   \begin{equation}
-    \lim _{x \to 0} (1 + x)^{\frac{1}{x}} = e
+    \lim_{x \to 0} (1 + x)^{\frac{1}{x}} = e
     \label{_fx_e_01}
   \end{equation}
 
@@ -289,26 +289,26 @@
     $e$. Pagal funkcijos ribos apibrėžimą sekoms (\ref{limfs})
     gauname:
     \begin{equation}
-      \lim _{x \to 0^{+}} (1 + x)^{\frac{1}{x}} = e.
+      \lim_{x \to 0^{+}} (1 + x)^{\frac{1}{x}} = e.
       \label{_fx_e_07}
     \end{equation}
 
     Dabar įrodysime, kad ir 
-    $\lim _{x \to 0^{-}} (1 + x)^{\frac{1}{x}} = e$. Sakykime, kad
+    $\lim_{x \to 0^{-}} (1 + x)^{\frac{1}{x}} = e$. Sakykime, kad
     $-1 < x < 0$ ir pažymėkime $y = -x$. Tada
     \begin{align*}
-      \lim _{x \to 0^{-}} (1 + x)^{\frac{1}{x}} 
-      &= \lim _{y \to 0^{+}} (1 - y)^{-\frac{1}{y}} \\
-      &= \lim _{y \to 0^{+}} 
+      \lim_{x \to 0^{-}} (1 + x)^{\frac{1}{x}} 
+      &= \lim_{y \to 0^{+}} (1 - y)^{-\frac{1}{y}} \\
+      &= \lim_{y \to 0^{+}} 
         \left( \frac{1}{1 - y} \right)^{\frac{1}{y}} \\
-      &= \lim _{y \to 0^{+}} 
+      &= \lim_{y \to 0^{+}} 
         \left( 1 + \frac{1}{1 - y} - 1 \right)^{\frac{1}{y}} \\
-      &= \lim _{y \to 0^{+}} 
+      &= \lim_{y \to 0^{+}} 
         \left( 1 + \frac{y}{1 - y} \right)^{\frac{1}{y}} \\
-      &= \lim _{y \to 0^{+}} 
+      &= \lim_{y \to 0^{+}} 
         \left( 1 + \frac{y}{1 - y} \right)^{\frac{1}{y} - 1}
         \left( 1 + \frac{y}{1 - y} \right)^{1} \\
-      &= \lim _{y \to 0^{+}} 
+      &= \lim_{y \to 0^{+}} 
         \underbrace{
           \left( 1 + \frac{y}{1 - y} \right)^{\frac{1 - y}{y}}}_{\to e}
         \underbrace{

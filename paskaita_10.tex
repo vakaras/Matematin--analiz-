@@ -6,15 +6,15 @@
   \end{equation*}
 \end{defn}
 
-\begin{defn}[Taškas yra žemiau]
-  Taškas $(x; y)$ yra žemiau taško $(x; Y)$, jei $y \leq Y$.
+\begin{defn}[Taškas yra ne aukščiau]
+  Taškas $(x; y)$ yra ne aukščiau taško $(x; Y)$, jei $y \leq Y$.
 \end{defn}
 
 \begin{defn}[Iškila funkcija]
   Funkcija $f$ vadinama iškila (į apačią) intervale $(a; b)$, jei
   $\forall x_{1}, x_{2} (x_{1},x_{2} \in (a; b))$ funkcijos grafiko
-  taškai $\left\{ (x; f(x)) : x_{1} \leq x \leq x_{2} \right\}$
-  yra žemiau funkcijos $f$ stygos, kuri jungia funkcijos 
+  taškai $\left\{ (x; f(x)) : x_{1} < x < x_{2} \right\}$
+  yra ne aukščiau funkcijos $f$ stygos, kuri jungia funkcijos 
   grafiko taškus $(x_{1}; f(x_{1}))$ ir $(x_{2}; f(x_{2}))$.
 
   Fiksuojame $x$ ir $y \leq Y$, kur $y$ yra funkcijos $f$ reikšmė 
@@ -44,7 +44,7 @@
   Iškilos į apačią funkcijos kriterijus:
   \begin{equation*}
     \frac{f(x) - f(x_{1})}{x - x_{1}} 
-    \leq \frac{f(x_{2} - f(x))}{x_{2} - x},
+    \leq \frac{f(x_{2}) - f(x)}{x_{2} - x},
   \end{equation*}
   kur $x_{1} < x < x_{2}$.
 \end{defn}
@@ -53,7 +53,7 @@
   Įgaubtos (iškilos į viršų) funkcijos kriterijus:
   \begin{equation*}
     \frac{f(x) - f(x_{1})}{x - x_{1}}
-    \leq \frac{f(x_{2}) - f(x)}{x_{2} - x},
+    \geq \frac{f(x_{2}) - f(x)}{x_{2} - x},
   \end{equation*}
   kur $x_{1} < x < x_{2}$.
 \end{defn}
@@ -105,8 +105,8 @@
 \begin{defn}[Vertikali asimptotė]
   Tiesė $x = x_{0}$ yra funkcijos $f$ vertikali asimptotė, jei 
   \begin{equation*}
-    \lim _{x \to x_{0}^{+}} f(x) = \infty \text{ arba }
-    \lim _{x \to x_{0}^{-}} f(x) = \infty.
+    \lim_{x \to x_{0}^{+}} f(x) = \infty \text{ arba }
+    \lim_{x \to x_{0}^{-}} f(x) = \infty.
   \end{equation*}
 
   TODO: Pavyzdį su brėžiniu.
@@ -115,8 +115,8 @@
 \begin{defn}[Nevertikali asimptotė]
   Tiesę $y = ax + b$ vadiname nevertikalia asimptote, tada ir tik tada, kai
   \begin{equation*}
-    \lim _{x \to +\infty} (f(x) - (ax + b)) = 0 \text{ arba }
-    \lim _{x \to -\infty} (f(x) - (ax + b)) = 0
+    \lim_{x \to +\infty} (f(x) - (ax + b)) = 0 \text{ arba }
+    \lim_{x \to -\infty} (f(x) - (ax + b)) = 0
   \end{equation*}
 
   \begin{note}
@@ -127,9 +127,9 @@
   \begin{note}
     Koeficientų $a$ ir $b$ radimo metodika, kai $x \to +\infty$:
     \begin{equation*}
-      \lim _{x \to +\infty} \left( \frac{f(x)}{x} - a - 
+      \lim_{x \to +\infty} \left( \frac{f(x)}{x} - a - 
         \left( \underbrace{\frac{b}{x}}_{\to 0} \right) \right) = 0
-        \implies a = \lim _{x \to +\infty} \left( \frac{f(x)}{x} \right))
+        \implies a = \lim_{x \to +\infty} \left( \frac{f(x)}{x} \right))
     \end{equation*}
     \begin{equation*}
       b = \lim_{x \to +\infty} (f(x) - ax)
@@ -141,8 +141,9 @@
 
 Atliekant funkcijos tyrimą atliekami tokie žingsniai:
 \begin{enumerate}
-  \item Nustatomi taškai, kur funkcija kerta $x$ ir $y$ ašis. Patikrinama
-    ar funkcija yra periodinė, lyginė, nelyginė.
+  \item Nustatomi taškai, kur funkcija kerta $x$ ir $y$ ašis. Patikrinama,
+    ar funkcija yra periodinė, lyginė, nelyginė. Randama funkcijos
+    apibrėžimo sritis.
   \item Ištiriami ypatingieji taškai: $-\infty, +\infty$, trūkio taškai.
     Nustatomos trūkio taškų rūšys.
   \item Ištiriamas funkcijos monotoniškumas: surandami didėjimo, mažėjimo

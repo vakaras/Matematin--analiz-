@@ -1,14 +1,14 @@
 \begin{prop}
-  Jei $\lim _{x \to a} f(x) = b$ ir $\lim _{x \to a} f(x) = c$, tai $b = c$.
+  Jei $\lim_{x \to a} f(x) = b$ ir $\lim_{x \to a} f(x) = c$, tai $b = c$.
   \begin{proof}
     Tarkime priešinai $b \neq c$. Tegu $b < c$.
 
     Pagal \ref{limfed} apibrėžimą:
     \begin{align*}
-      \lim _{x \to a} f(x) = b \iff&% 
+      \lim_{x \to a} f(x) = b \iff&% 
         \forall U_{b}, \exists U_{a} :%
         f(x) \in U_{b}, \forall x(x \in U_{a}) \\
-      \lim _{x \to a} f(x) = c \iff&% 
+      \lim_{x \to a} f(x) = c \iff&% 
         \forall U_{c}, \exists U'_{a} :%
         f(x) \in U_{c}, \forall x(x \in U'_{a})
     \end{align*}
@@ -24,27 +24,27 @@
 
 \begin{prop}
   Jei $f(x) \leq g(x), \forall x (x \in U_{a})$ ir $f$ bei $g$ turi ribą
-  taške $a$, tai $\lim _{x \to a} f(x) \leq \lim _{x \to a} g(x)$.
+  taške $a$, tai $\lim_{x \to a} f(x) \leq \lim_{x \to a} g(x)$.
   %TODO: Įrodyti!
 \end{prop}
 
 \begin{prop}
-  Jei $\lim _{x \to a} f(x) = b < c$, tai 
+  Jei $\lim_{x \to a} f(x) = b < c$, tai 
   $\exists U_{a} : f(x) < c, \forall x (x \in U_{a})$.
   %TODO: Įrodyti!
 \end{prop}
 
 \begin{prop}
   Jei $h(x) \leq f(x) \leq g(x), \forall x(x \in A)$ ir 
-  $\lim _{x \to a} h(x) = \lim _{x \to a} g(x) = b$, tai
-  $\lim _{x \to a} f(x) = b$.
+  $\lim_{x \to a} h(x) = \lim_{x \to a} g(x) = b$, tai
+  $\lim_{x \to a} f(x) = b$.
   %TODO: Įrodyti!
 \end{prop}
 
 \begin{prop}
   Jei $f$ yra monotoniška intervale $I$ ir $a \in I$, tai 
-  $\exists \lim _{x \to a} f(x)$. Jei papildomai žinome, kad $f$ yra
-  aprėžta intervale $I$, tai $\lim _{x \to a} f(x)$ yra baigtinė.
+  $\exists \lim_{x \to a} f(x)$. Jei papildomai žinome, kad $f$ yra
+  aprėžta intervale $I$, tai $\lim_{x \to a} f(x)$ yra baigtinė.
   %TODO: Įrodyti!
 \end{prop}
 
@@ -53,18 +53,18 @@
   $\alpha, \beta \in \RSET$, tai 
   \begin{enumerate}
     \item \[
-      \lim _{x \to a} (\alpha f(x) + \beta g(x)) =%
-        \alpha \lim _{x \to a} f(x) + \beta \lim _{x \to a} g(x);
+      \lim_{x \to a} (\alpha f(x) + \beta g(x)) =%
+        \alpha \lim_{x \to a} f(x) + \beta \lim_{x \to a} g(x);
       \]
     \item \[
-      \lim _{x \to a} (f(x)g(x)) =%
-        \lim _{x \to a} f(x) \lim _{x \to a} g(x);
+      \lim_{x \to a} (f(x)g(x)) =%
+        \lim_{x \to a} f(x) \lim_{x \to a} g(x);
       \]
     \item Jei 
-      $g(x) \neq 0, \forall x (x \in A), \lim _{x \to a} g(x) \neq 0$, tai
+      $g(x) \neq 0, \forall x (x \in A), \lim_{x \to a} g(x) \neq 0$, tai
       \begin{equation*}
-        \lim _{x \to a} \frac{f(x)}{g(x)} =
-          \frac{\lim _{x \to a} f(x)}{\lim _{x \to a} g(x)}.
+        \lim_{x \to a} \frac{f(x)}{g(x)} =
+          \frac{\lim_{x \to a} f(x)}{\lim_{x \to a} g(x)}.
       \end{equation*}
   %TODO: Įrodyti!
   \end{enumerate}
@@ -78,7 +78,7 @@
   \]
   \begin{notation} 
     \[
-    \lim _{x \to a^{+}} f(x) = b
+    \lim_{x \to a^{+}} f(x) = b
     \]
   \end{notation}
 \end{defn}
@@ -91,7 +91,7 @@
   \]
   \begin{notation} 
     \[
-    \lim _{x \to a^{-}} f(x) = b
+    \lim_{x \to a^{-}} f(x) = b
     \]
   \end{notation}
 \end{defn}

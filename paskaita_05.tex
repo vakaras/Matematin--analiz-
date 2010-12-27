@@ -3,7 +3,7 @@
 \begin{defn}[Viršutinė riba]
   \begin{equation*}
     \limsup _{x \to a} f(x) := 
-      \lim _{\delta \to 0} 
+      \lim_{\delta \to 0} 
       \sup \left\{ f(x), x \in A : |x - a| < \delta \right\}
   \end{equation*}
 \end{defn}
@@ -11,7 +11,7 @@
 \begin{defn}[Apatinė riba]
   \begin{equation*}
     \liminf _{x \to a} f(x) :=
-      \lim _{\delta \to 0}
+      \lim_{\delta \to 0}
       \inf \left\{ f(x), x \in A : |x - a| < \delta \right\}
   \end{equation*}
 \end{defn}
@@ -19,20 +19,20 @@
 \begin{exmp}
   \begin{align*}
     \limsup _{x \to 0} \left( \sin \frac{1}{x} \right) 
-    &= \lim _{\delta \to 0} \sup 
+    &= \lim_{\delta \to 0} \sup 
       \left\{ \sin \frac{1}{x} : |x - a| < \delta \right\} \\
-    &= \lim _{\delta \to 0} 1 \\
+    &= \lim_{\delta \to 0} 1 \\
     &= 1
   \end{align*}
   \begin{align*}
     \liminf _{x \to 0} \left( \sin \frac{1}{x} \right) 
-    &= \lim _{\delta \to 0} (-1) = -1
+    &= \lim_{\delta \to 0} (-1) = -1
   \end{align*}
 \end{exmp}
 
 \begin{prop}
   \begin{equation*}
-    \exists \lim _{x \to a} f(x) \iff
+    \exists \lim_{x \to a} f(x) \iff
     \limsup _{x \to a} f(x) = \liminf _{x \to a} f(x)
   \end{equation*}
 \end{prop}
@@ -40,7 +40,7 @@
 \begin{defn}[Viršutinė riba]
   \begin{equation*}
     \limsup _{x \to a} f(x) :=
-      \lim _{\delta \to 0}
+      \lim_{\delta \to 0}
       \sup \left\{ f(x) : x 
         (x \in U(a, \delta) \cap A \setminus \{a\}) 
         \right\}
@@ -50,7 +50,7 @@
 \begin{defn}[Apatinė riba]
   \begin{equation*}
     \liminf _{x \to a} f(x) :=
-      \lim _{\delta \to 0}
+      \lim_{\delta \to 0}
       \inf \left\{ f(x) : x 
         (x \in U(a, \delta) \cap A \setminus \{a\}) 
         \right\}
@@ -59,8 +59,8 @@
 
 \begin{notation}
   \begin{align*}
-    \lim _{x \to a^{+}} f(x) &\equiv f(a^{+}) \\
-    \lim _{x \to a^{-}} f(x) &\equiv f(a^{-}) \\
+    \lim_{x \to a^{+}} f(x) &\equiv f(a^{+}) \\
+    \lim_{x \to a^{-}} f(x) &\equiv f(a^{-}) \\
   \end{align*}
 \end{notation}
 
@@ -85,7 +85,7 @@
     \end{cases}.
   \end{align*}
 
-  Iš $\lim _{x \to 0} \frac{\sin x}{x} = 1$ įrodymo 
+  Iš $\lim_{x \to 0} \frac{\sin x}{x} = 1$ įrodymo 
   (\ref{lim_sinx_x} pavyzdys) žinome, kad $\sin |x| \leq |x|$ ir 
   kad $\cos |x| \leq \frac{\sin |x|}{|x|}$. Atlikę
   kelis pertvarkymus (verta pastebėti, kad visus veiksmus atliekame
@@ -136,7 +136,7 @@
 
   Taigi
   \begin{equation*}
-    \lim _{\delta \to 0} h(\delta) = 3.
+    \lim_{\delta \to 0} h(\delta) = 3.
   \end{equation*}
 \end{exmp}
 
@@ -145,7 +145,7 @@
 \begin{prop}
   \label{lim_mon}
   $f: A \to \RSET$, $a$ – ribinis ir didžiausias $A$ taškas ir $f$ yra
-  monotoniška. Tada $f$ turi ribą taške $a$. Ir jei $f$ yra ir apibrėžta,
+  monotoniška. Tada $f$ turi ribą taške $a$. Ir jei $f$ yra ir aprėžta,
   tai riba taške $a$ yra baigtinė.
 \end{prop}
 
@@ -166,13 +166,13 @@
 
     Gavome, kad $f(x_{2}) > f(x_{1})$, o tai reiškia, kad $f(x)$ intervale
     $\left( \frac{1}{2} ; 1 \right)$ didėja. Taigi pagal \ref{lim_mon}
-    teiginį $\exists \lim _{x \to a} f(x)$.
+    teiginį $\exists \lim_{x \to a} f(x)$.
 
-    Ar $f(x)$ yra aprėžta? Tai yra ar
+    Ar $f(x)$ yra aprėžta? Tai yra, ar
     \begin{equation*}
       \exists c (c \in \RSET) : x^{2} \leq c, \forall x (x \in A)?
     \end{equation*}
-    Taip $c = 1$. Taigi $\lim _{x \to 1} x^{2}$ yra baigtinė.
+    Taip, $c = 1$. Taigi $\lim_{x \to 1} x^{2}$ yra baigtinė.
   \end{proof}
 \end{exmp}
 
@@ -190,7 +190,7 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
 \begin{enumerate}
   \item jei $a$ – izoliuotas aibės $A$ taškas, ir 
   \item jei $a$ – ribinis aibės $A$ taškas bei 
-    $\lim _{x \to a} f(x) = f(a)$.
+    $\lim_{x \to a} f(x) = f(a)$.
 \end{enumerate}
 
 \begin{defn}[Tolydi aibėje funkcija]
@@ -215,15 +215,15 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
       taškas a yra vadinamas 1 rūšies trūkiu.
     \item[pataisomas trūkis] Jei
       \begin{equation*}
-        \lim _{x \to a^{-}} f(x) = \lim _{x \to a^{+}} f(x) 
-        \implies \exists \lim _{x \to a} f(x)
+        \lim_{x \to a^{-}} f(x) = \lim_{x \to a^{+}} f(x) 
+        \implies \exists \lim_{x \to a} f(x)
       \end{equation*}
       yra baigtinė, tai taškas $a$ vadinamas pataisomu trūkio tašku.
     \item[2 rūšies trūkis] Jei
       \begin{equation*}
-        \nexists \lim _{x \to a^{-}} f(x)
+        \nexists \lim_{x \to a^{-}} f(x)
         \text{ arba }
-        \nexists \lim _{x \to a^{+}} f(x),
+        \nexists \lim_{x \to a^{+}} f(x),
       \end{equation*}
       arba bent viena iš jų yra begalinė, tai taškas $a$ yra vadinamas
       2 rūšies trūkiu.
@@ -235,10 +235,10 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
     f(x) = \frac{x}{x}, a = 0
   \end{equation*}
 
-  Kadangi $\lim _{x \to 0} f(x) \neq f(0)$, nes $\nexists f(0)$, tai
+  Kadangi $\lim_{x \to 0} f(x) \neq f(0)$, nes $\nexists f(0)$, tai
   taškas $x = 0$ yra trūkio.
 
-  Kadangi $\lim _{x \to 0} \frac{x}{x} = 1$, tai $x = 0$ yra 1 rūšies
+  Kadangi $\lim_{x \to 0} \frac{x}{x} = 1$, tai $x = 0$ yra 1 rūšies
   trūkio taškas ir jis yra pataisomas.
 \end{exmp}
 
@@ -249,8 +249,8 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
 
   Kadangi
   \begin{align*}
-    \lim _{x \to 0^{+}} \sign(x) &= 1 \\
-    \lim _{x \to 0^{-}} \sign(x) &= -1,
+    \lim_{x \to 0^{+}} \sign(x) &= 1 \\
+    \lim_{x \to 0^{-}} \sign(x) &= -1,
   \end{align*}
   tai $x = 0$ yra 1 rūšies trūkio taškas.
 \end{exmp}
@@ -262,8 +262,8 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
 
   Kadangi
   \begin{align*}
-    \lim _{x \to 0^{+}} \frac{1}{|x|} &= +\infty \\
-    \lim _{x \to 0^{-}} \frac{1}{|x|} &= +\infty,
+    \lim_{x \to 0^{+}} \frac{1}{|x|} &= +\infty \\
+    \lim_{x \to 0^{-}} \frac{1}{|x|} &= +\infty,
   \end{align*}
   tai $x = 0$ yra 2 rūšies trūkio taškas.
 \end{exmp}
@@ -284,7 +284,7 @@ $f(x)$ gali būti tolydi taške $a$ dviem atvejais:
 
     Tarkime, jog $f$ ir $g$ yra tolydžios taške $a$. Reikia įrodyti:
     \begin{equation*}
-      \lim _{x \to a} (f + g)(x) = (f + g)(a)
+      \lim_{x \to a} (f + g)(x) = (f + g)(a)
     \end{equation*}
 
     Tikriname:
