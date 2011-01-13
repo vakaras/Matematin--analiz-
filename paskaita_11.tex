@@ -1,0 +1,108 @@
+\chapter{Integralas}
+
+TODO Sutvarkyti.
+
+\begin{note}
+  Toliau darome prielaidą, kad $f: I \to \RSET$, kur $I$ – intervalas.
+\end{note}
+
+\begin{notation}
+  \begin{description}
+    \item[$C(I)$] visų funkcijų, kurios intervale $I$ yra tolydžios, aibė.
+    \item[$C^{n}(I)$] visų funkcijų, kurios intervale $I$ yra $n$ kartų 
+      tolydžiai diferencijuojamos, aibė.
+    \item[$D(I)$] visų funkcijų, kurios intervale $I$ neturi antros rūšies 
+      trūkių aibė. Konkretaus intervalo atveju skliaustus galima praleisti
+      (pavyzdžiui, $D[a; b] := D([a; b])$.)
+    \item[$S(I)$] visų funkcijų, kurios intervale $I$ yra laiptinės, aibė.
+  \end{description}
+\end{notation}
+
+\begin{defn}[Tolydi funkcija]
+  Funkcijos riba taške lygi funkcijos reikšmei tame taške.
+\end{defn}
+
+\begin{defn}[Tolygiai tolydi funkcija]
+  Funkcija $f$ yra vadinama tolygiai tolydžia aibėje $A$, jei
+  \begin{equation*}
+    \forall \varepsilon (\varepsilon > 0), \exists \delta : %
+    | f(x') - f(x'') < \varepsilon, %
+    \forall x', x'' (x', x'' \in A, |x' - x''| < \delta)
+  \end{equation*}
+
+  (Tas pats kaip ir funkcijos ribos Koši kriterijus, tik taškas į kurį
+  artėja turi būti lygus funkcijos reikšmei tame taške.)
+\end{defn}
+
+\begin{prop}
+  (Kantoro teorema) Tolydi  uždarame, aprėžtame intervale funkcija yra
+  tolygiai tolydi.
+\end{prop}
+
+\section{Funkcijų sekos tolydus konvergavimas}
+
+\begin{note}
+  Visų funkcijų sekos funkcijų $f_{i}$ apibrėžimo sritys (sritys, kuriose
+  tiriamos funkcijos) yra vienodos ir žymimos $A$.
+\end{note}
+
+\begin{defn}[„Pataškinis“ konvergavimas]
+  Sakome, kad $f_{n}$ konverguoja į $f$ aibėje $A$, jei 
+  $f_{n}(x_{0}) \to f(x_{0})$, kai $n \to +\infty$.
+
+  (Jei visos reikšmių sekos konverguoja į galutinės funkcijos reikšmes.)
+
+  \begin{notation}
+    $f_{n} \to f$
+  \end{notation}
+\end{defn}
+
+\begin{defn}[Tolydus konvergavimas]
+  $\sup_{x \in A} | f_{n}(x) - f(x) | \to 0$, kai $n \to +\infty$.
+  \begin{notation}
+    $f_{n} \rightrightarrows f$
+  \end{notation}
+\end{defn}
+
+\begin{prop}
+  (Koši kriterijus) $\left\{ f_{n} \right\}$ konverguoja tolygiai 
+  aibėje $A$ tada ir tik tada, kai:
+  \begin{equation*}
+    \forall \varepsilon (\varepsilon > 0) \exists N : %
+      |f_{n}(x) - f_{m}(x)| < \varepsilon, %
+      \forall n, m (n, m > N), \forall x (x \in A)
+  \end{equation*}
+\end{prop}
+
+\begin{prop}
+  Jei $f_{n}, \forall n(n \in \NSET)$ yra tolydžios aibėje $A$, tai ir
+  $f (f_n \rightrightarrows f)$ irgi yra tolydi aibėje A.
+\end{prop}
+
+\section{Kažkas naujo}
+
+\begin{defn}[Laiptinė funkcija]
+  Funkcija $f$ vadinama laiptine intervale $I$, jei intervalą $I$ galima
+  suskaidyti į baigtinį skaičių intervalų ${I_{k}, k=1, 2, 3,\ldots, n}$
+  (tai yra $\cup_{k=1}^{n} I_{k} = I$ ir 
+  $I_{k} \cap I_{l} = \emptyset, \forall k, l (k \neq l)$), kuriuose
+  funkcija turi pastovią reikšmę.
+\end{defn}
+
+\begin{prop}
+  \begin{enumerate}
+    \item Bet kokiai funkcijai $f (f \in D[a; b])$ egzistuoja laiptinių
+      funkcijų seka 
+      $\left\{ \varphi_{n} \right\} (\varphi \in S[a; b], \forall n)$,
+      tolygiai konverguojanti į $f$ intervale $[a; b]$.
+    \item Kiekvienos funkcijos $f (f \in D[a; b])$ trūkio taškų aibė
+      yra baigtinė arba skaiti.
+    \item Kiekviena funkcija $f (f \in D[a; b])$ yra aprėžta.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  (Neapibrėžtinių integralų savybės) 17 psl.
+  Pavyzdžiai 18 psl.
+\end{prop}
+
